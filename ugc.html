@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UGC Content — AXSOAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">AXSOAL</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="interior.html">Interior Design</a></li>
+      <li><a href="ugc.html" class="active">UGC</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="menu">☰</button>
+  </nav>
+
+  <div class="page-header fade-up">
+    <div class="page-eyebrow">Content Creation</div>
+    <h1 class="page-title">UGC <em>Portfolio</em></h1>
+    <p class="page-desc">Authentic content that converts. Scroll-stopping video and photo content for lifestyle, home, and wellness brands — content that feels human because it is.</p>
+  </div>
+
+  <!-- Stats -->
+  <div style="padding: 0 2.5rem;">
+    <div class="ugc-stats">
+      <div class="ugc-stat">
+        <span class="ugc-stat-num">50+</span>
+        <span class="ugc-stat-label">Brand Collaborations</span>
+      </div>
+      <div class="ugc-stat">
+        <span class="ugc-stat-num">∞</span>
+        <span class="ugc-stat-label">Ideas Per Project</span>
+      </div>
+      <div class="ugc-stat">
+        <span class="ugc-stat-num">100%</span>
+        <span class="ugc-stat-label">Original Content</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- iPhone Video Grid -->
+  <section class="ugc-phones-section">
+    <div class="page-eyebrow" style="margin-bottom:2.5rem;">Featured Work</div>
+
+    <div class="ugc-phones-grid" id="phonesGrid">
+
+      <!-- Phone 1 -->
+      <div class="iphone-frame">
+        <div class="iphone-outer">
+          <div class="iphone-screen">
+            <div class="iphone-drop-zone" id="drop0" onclick="document.getElementById('file0').click()">
+              <div class="iphone-drop-icon">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="iphone-drop-label">Drop video or tap to upload</div>
+            </div>
+          </div>
+        </div>
+        <input type="file" class="iphone-file-input" id="file0" accept="video/*,image/*" onchange="handleFile(this, 'drop0', 'screen0')" />
+        <div class="iphone-brand-label">
+          <div class="iphone-brand-tag">UGC · Video</div>
+          <div class="iphone-brand-name">Brand Name Here</div>
+        </div>
+        <button class="iphone-remove-btn" id="remove0" onclick="removeMedia(0)">Remove</button>
+      </div>
+
+      <!-- Phone 2 -->
+      <div class="iphone-frame">
+        <div class="iphone-outer">
+          <div class="iphone-screen">
+            <div class="iphone-drop-zone" id="drop1" onclick="document.getElementById('file1').click()">
+              <div class="iphone-drop-icon">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="iphone-drop-label">Drop video or tap to upload</div>
+            </div>
+          </div>
+        </div>
+        <input type="file" class="iphone-file-input" id="file1" accept="video/*,image/*" onchange="handleFile(this, 'drop1', 'screen1')" />
+        <div class="iphone-brand-label">
+          <div class="iphone-brand-tag">UGC · Reel</div>
+          <div class="iphone-brand-name">Brand Name Here</div>
+        </div>
+        <button class="iphone-remove-btn" id="remove1" onclick="removeMedia(1)">Remove</button>
+      </div>
+
+      <!-- Phone 3 -->
+      <div class="iphone-frame">
+        <div class="iphone-outer">
+          <div class="iphone-screen">
+            <div class="iphone-drop-zone" id="drop2" onclick="document.getElementById('file2').click()">
+              <div class="iphone-drop-icon">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="iphone-drop-label">Drop video or tap to upload</div>
+            </div>
+          </div>
+        </div>
+        <input type="file" class="iphone-file-input" id="file2" accept="video/*,image/*" onchange="handleFile(this, 'drop2', 'screen2')" />
+        <div class="iphone-brand-label">
+          <div class="iphone-brand-tag">UGC · TikTok</div>
+          <div class="iphone-brand-name">Brand Name Here</div>
+        </div>
+        <button class="iphone-remove-btn" id="remove2" onclick="removeMedia(2)">Remove</button>
+      </div>
+
+      <!-- Phone 4 -->
+      <div class="iphone-frame">
+        <div class="iphone-outer">
+          <div class="iphone-screen">
+            <div class="iphone-drop-zone" id="drop3" onclick="document.getElementById('file3').click()">
+              <div class="iphone-drop-icon">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="iphone-drop-label">Drop video or tap to upload</div>
+            </div>
+          </div>
+        </div>
+        <input type="file" class="iphone-file-input" id="file3" accept="video/*,image/*" onchange="handleFile(this, 'drop3', 'screen3')" />
+        <div class="iphone-brand-label">
+          <div class="iphone-brand-tag">UGC · Instagram</div>
+          <div class="iphone-brand-name">Brand Name Here</div>
+        </div>
+        <button class="iphone-remove-btn" id="remove3" onclick="removeMedia(3)">Remove</button>
+      </div>
+
+      <!-- Phone 5 -->
+      <div class="iphone-frame">
+        <div class="iphone-outer">
+          <div class="iphone-screen">
+            <div class="iphone-drop-zone" id="drop4" onclick="document.getElementById('file4').click()">
+              <div class="iphone-drop-icon">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="iphone-drop-label">Drop video or tap to upload</div>
+            </div>
+          </div>
+        </div>
+        <input type="file" class="iphone-file-input" id="file4" accept="video/*,image/*" onchange="handleFile(this, 'drop4', 'screen4')" />
+        <div class="iphone-brand-label">
+          <div class="iphone-brand-tag">UGC · Beauty</div>
+          <div class="iphone-brand-name">Brand Name Here</div>
+        </div>
+        <button class="iphone-remove-btn" id="remove4" onclick="removeMedia(4)">Remove</button>
+      </div>
+
+      <!-- Phone 6 -->
+      <div class="iphone-frame">
+        <div class="iphone-outer">
+          <div class="iphone-screen">
+            <div class="iphone-drop-zone" id="drop5" onclick="document.getElementById('file5').click()">
+              <div class="iphone-drop-icon">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="iphone-drop-label">Drop video or tap to upload</div>
+            </div>
+          </div>
+        </div>
+        <input type="file" class="iphone-file-input" id="file5" accept="video/*,image/*" onchange="handleFile(this, 'drop5', 'screen5')" />
+        <div class="iphone-brand-label">
+          <div class="iphone-brand-tag">UGC · Wellness</div>
+          <div class="iphone-brand-name">Brand Name Here</div>
+        </div>
+        <button class="iphone-remove-btn" id="remove5" onclick="removeMedia(5)">Remove</button>
+      </div>
+
+    </div><!-- end phones grid -->
+
+    <p style="font-size:11px;color:var(--taupe-light);text-align:center;margin-top:2.5rem;letter-spacing:0.08em;">
+      Click or drag a video / image onto any phone screen to preview your content.
+    </p>
+  </section>
+
+  <!-- What Brands Get -->
+  <section class="ugc-offers">
+    <div class="ugc-offers-inner">
+      <div class="page-eyebrow">What Brands Get</div>
+      <div class="ugc-offers-grid">
+        <div>
+          <div class="ugc-offer-title">Raw + Edited Files</div>
+          <p class="ugc-offer-p">You receive everything — ready to post or repurpose across all platforms.</p>
+        </div>
+        <div>
+          <div class="ugc-offer-title">Fast Turnaround</div>
+          <p class="ugc-offer-p">Content delivered within 5–7 business days with revision rounds included.</p>
+        </div>
+        <div>
+          <div class="ugc-offer-title">Full Usage Rights</div>
+          <p class="ugc-offer-p">Use the content in ads, social, email, and more — it's yours to keep.</p>
+        </div>
+        <div>
+          <div class="ugc-offer-title">On-Brand Authenticity</div>
+          <p class="ugc-offer-p">Storytelling that connects — not another product unboxing that blends in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <p class="cta-band-text">Want content that actually converts?</p>
+    <a href="contact.html" class="btn-primary" style="background:var(--linen-light);color:var(--wine-dark);">Let's Collaborate</a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">AXSOAL</span>
+      <div class="footer-links">
+        <a href="interior.html">Interior Design</a>
+        <a href="ugc.html">UGC</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <span class="footer-copy">© 2026 AXSOAL. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    function handleFile(input, dropId, screenId) {
+      const file = input.files[0];
+      if (!file) return;
+      const idx = dropId.replace('drop','');
+      const screen = input.closest('.iphone-outer').querySelector('.iphone-screen');
+      const drop = document.getElementById(dropId);
+      const url = URL.createObjectURL(file);
+
+      screen.innerHTML = '';
+      if (file.type.startsWith('video/')) {
+        const vid = document.createElement('video');
+        vid.src = url;
+        vid.autoplay = true;
+        vid.loop = true;
+        vid.muted = true;
+        vid.playsInline = true;
+        screen.appendChild(vid);
+      } else {
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = 'UGC content';
+        screen.appendChild(img);
+      }
+      const removeBtn = document.getElementById('remove' + idx);
+      if (removeBtn) removeBtn.style.display = 'block';
+    }
+
+    function removeMedia(idx) {
+      const screen = document.querySelectorAll('.iphone-screen')[idx];
+      const fileInput = document.getElementById('file' + idx);
+      screen.innerHTML = `<div class="iphone-drop-zone" id="drop${idx}" onclick="document.getElementById('file${idx}').click()">
+        <div class="iphone-drop-icon">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="iphone-drop-label">Drop video or tap to upload</div>
+      </div>`;
+      fileInput.value = '';
+      const removeBtn = document.getElementById('remove' + idx);
+      if (removeBtn) removeBtn.style.display = 'none';
+    }
+
+    // Drag-and-drop support
+    document.querySelectorAll('.iphone-outer').forEach((outer, idx) => {
+      outer.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        const zone = outer.querySelector('.iphone-drop-zone');
+        if (zone) zone.classList.add('dragover');
+      });
+      outer.addEventListener('dragleave', () => {
+        const zone = outer.querySelector('.iphone-drop-zone');
+        if (zone) zone.classList.remove('dragover');
+      });
+      outer.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const zone = outer.querySelector('.iphone-drop-zone');
+        if (zone) zone.classList.remove('dragover');
+        const file = e.dataTransfer.files[0];
+        if (!file) return;
+        const fileInput = document.getElementById('file' + idx);
+        const dt = new DataTransfer();
+        dt.items.add(file);
+        fileInput.files = dt.files;
+        handleFile(fileInput, 'drop' + idx, 'screen' + idx);
+      });
+    });
+  </script>
+</body>
+</html>

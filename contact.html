@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — AXSOAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">AXSOAL</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="interior.html">Interior Design</a></li>
+      <li><a href="ugc.html">UGC</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="menu">☰</button>
+  </nav>
+
+  <div class="page-header fade-up">
+    <div class="page-eyebrow">Get in Touch</div>
+    <h1 class="page-title">Let's <em>connect.</em></h1>
+    <p class="page-desc">Whether you have a space to transform or a brand story to tell — I'd love to hear about it. Fill out the form and I'll be in touch within 48 hours.</p>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Start the conversation.</h3>
+        <p>Every great project begins with a single conversation. Tell me what you're imagining — no project is too big or too small.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-label">Email</div>
+          <div class="contact-detail-value">hello@axsoal.com</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-label">Based in</div>
+          <div class="contact-detail-value">Your City, State</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-label">Available for</div>
+          <div class="contact-detail-value">Local & Remote Projects</div>
+        </div>
+        <div class="contact-detail" style="margin-top:2.5rem;">
+          <div class="contact-detail-label">Follow Along</div>
+          <div style="display:flex;gap:1.25rem;margin-top:0.5rem;flex-wrap:wrap;">
+            <a href="https://instagram.com/axsoal" target="_blank" class="btn-text">Instagram</a>
+            <a href="https://tiktok.com/@axsoal" target="_blank" class="btn-text">TikTok</a>
+            <a href="https://pinterest.com/" target="_blank" class="btn-text">Pinterest</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Powered by Formspree — replace YOUR_FORM_ID after signing up at formspree.io -->
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="first-name">First Name</label>
+            <input class="form-input" type="text" id="first-name" name="first_name" required placeholder="Jane" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="last-name">Last Name</label>
+            <input class="form-input" type="text" id="last-name" name="last_name" required placeholder="Smith" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input class="form-input" type="email" id="email" name="email" required placeholder="jane@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="service">I'm interested in</label>
+          <select class="form-select" id="service" name="service">
+            <option value="">Select a service…</option>
+            <option value="interior-design">Interior Design</option>
+            <option value="ugc">UGC Content Creation</option>
+            <option value="consultation">Consultation</option>
+            <option value="both">Both / Not Sure Yet</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="budget">Budget Range</label>
+          <select class="form-select" id="budget" name="budget">
+            <option value="">Select a range…</option>
+            <option value="under-1k">Under $1,000</option>
+            <option value="1k-5k">$1,000 – $5,000</option>
+            <option value="5k-10k">$5,000 – $10,000</option>
+            <option value="10k-plus">$10,000+</option>
+            <option value="lets-talk">Let's talk</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="message">Tell me about your project</label>
+          <textarea class="form-textarea" id="message" name="message" required placeholder="Describe your space, your vision, your brand — anything that helps me understand what you're looking for…"></textarea>
+        </div>
+
+        <p class="form-note">I typically respond within 48 hours.</p>
+        <button type="submit" class="btn-primary form-submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">AXSOAL</span>
+      <div class="footer-links">
+        <a href="interior.html">Interior Design</a>
+        <a href="ugc.html">UGC</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <span class="footer-copy">© 2026 AXSOAL. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interior Design — AXSOAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== PASSWORD GATE ===================== -->
+  <div class="password-gate" id="passwordGate">
+    <div class="password-gate-inner">
+      <div class="password-gate-logo">AXSOAL</div>
+      <h2>Portfolio Access</h2>
+      <p>This portfolio contains NDA-protected project work.<br />Enter the password to continue.</p>
+      <input
+        class="password-gate-input"
+        type="password"
+        id="passwordInput"
+        placeholder="· · · · · · · ·"
+        autocomplete="off"
+      />
+      <div class="password-gate-error" id="passwordError"></div>
+      <button class="btn-primary" onclick="checkPassword()" style="width:100%;">Enter Portfolio</button>
+      <p style="margin-top:1.5rem;font-size:11px;color:var(--taupe-light);">
+        Don't have the password? <a href="contact.html" style="color:var(--wine);border-bottom:1px solid var(--linen);">Request access →</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <div id="mainContent" style="display:none;">
+
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">AXSOAL</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="interior.html" class="active">Interior Design</a></li>
+        <li><a href="ugc.html">UGC</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="menu">☰</button>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header fade-up">
+      <div class="page-eyebrow">Residential Portfolio</div>
+      <h1 class="page-title">Interior <em>Design</em></h1>
+      <p class="page-desc">A curated look at residential projects — spaces designed around the people who call them home. Many of these projects are covered by NDAs; imagery and identifying details have been handled with care.</p>
+    </div>
+
+    <!-- NDA Notice -->
+    <div class="nda-banner" style="margin: 0 2.5rem 0; max-width: calc(var(--max-w) - 5rem); margin-left: auto; margin-right: auto;">
+      <p><strong>NDA Notice —</strong> The projects shown on this page were completed under non-disclosure agreements. Identifying details, client names, and specific locations have been withheld. Photos and project descriptions are shared with permission or have been appropriately anonymized.</p>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-section">
+
+      <!-- Row 1: wide + tall -->
+      <div class="portfolio-grid">
+        <div class="p-card wide" onclick="openModal(0)">
+          <div class="p-card-img" style="background:var(--linen);">
+            <!-- <img src="images/project-1a.jpg" alt="Project 1"> -->
+            <div class="p-card-img-placeholder"><span>Upload project photo</span></div>
+          </div>
+          <div class="p-card-info">
+            <div class="p-card-tag">Residential · Living Room</div>
+            <div class="p-card-title">Project 01 — [Your Title]</div>
+          </div>
+        </div>
+        <div class="p-card tall" onclick="openModal(1)">
+          <div class="p-card-img" style="background:#c4b0a8;">
+            <div class="p-card-img-placeholder"><span>Upload project photo</span></div>
+          </div>
+          <div class="p-card-info">
+            <div class="p-card-tag">Residential · Primary Suite</div>
+            <div class="p-card-title">Project 02 — [Your Title]</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: halves -->
+      <div class="portfolio-grid">
+        <div class="p-card half" onclick="openModal(2)">
+          <div class="p-card-img" style="background:#b5a898;">
+            <div class="p-card-img-placeholder"><span>Upload project photo</span></div>
+          </div>
+          <div class="p-card-info">
+            <div class="p-card-tag">Residential · Kitchen</div>
+            <div class="p-card-title">Project 03 — [Your Title]</div>
+          </div>
+        </div>
+        <div class="p-card half" onclick="openModal(3)">
+          <div class="p-card-img" style="background:#a89080;">
+            <div class="p-card-img-placeholder"><span>Upload project photo</span></div>
+          </div>
+          <div class="p-card-info">
+            <div class="p-card-tag">Residential · Dining Room</div>
+            <div class="p-card-title">Project 04 — [Your Title]</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: full -->
+      <div class="portfolio-grid">
+        <div class="p-card full" onclick="openModal(4)">
+          <div class="p-card-img" style="background:#9e9080;">
+            <div class="p-card-img-placeholder"><span>Upload project photo</span></div>
+          </div>
+          <div class="p-card-info">
+            <div class="p-card-tag">Residential · Full Home Redesign</div>
+            <div class="p-card-title">Project 05 — [Your Title]</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4: thirds -->
+      <div class="portfolio-grid">
+        <div class="p-card third" onclick="openModal(5)">
+          <div class="p-card-img" style="background:#c8bbab;">
+            <div class="p-card-img-placeholder"><span>Upload project photo</span></div>
+          </div>
+          <div class="p-card-info">
+            <div class="p-card-tag">Detail · Styling</div>
+            <div class="p-card-title">Project 06 — [Your Title]</div>
+          </div>
+        </div>
+        <div class="p-card third" onclick="openModal(6)">
+          <div class="p-card-img" style="background:#a0937f;">
+            <div class="p-card-img-placeholder"><span>Upload project photo</span></div>
+          </div>
+          <div class="p-card-info">
+            <div class="p-card-tag">Residential · Bathroom</div>
+            <div class="p-card-title">Project 07 — [Your Title]</div>
+          </div>
+        </div>
+        <div class="p-card third" onclick="openModal(7)">
+          <div class="p-card-img" style="background:#b8ac9c;">
+            <div class="p-card-img-placeholder"><span>Upload project photo</span></div>
+          </div>
+          <div class="p-card-info">
+            <div class="p-card-tag">Residential · Home Office</div>
+            <div class="p-card-title">Project 08 — [Your Title]</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================== COMING SOON: VIRTUAL DESIGN ===================== -->
+    <section class="coming-soon-section">
+      <div class="page-eyebrow">Coming Soon</div>
+      <div class="coming-soon-pill">Virtual Interior Design</div>
+      <h2>Beautiful spaces,<br><em>wherever you are.</em></h2>
+      <p>Online interior decorating and virtual design consultations are on the horizon — the same elevated, intentional approach, delivered remotely. Join the waitlist to be the first to know.</p>
+      <a href="contact.html" class="btn-primary" style="background:var(--linen-light);color:var(--wine-dark);">Join the Waitlist</a>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span class="footer-logo">AXSOAL</span>
+        <div class="footer-links">
+          <a href="interior.html">Interior Design</a>
+          <a href="ugc.html">UGC</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <span class="footer-copy">© 2026 AXSOAL. All rights reserved.</span>
+      </div>
+    </footer>
+
+  </div><!-- /mainContent -->
+
+  <!-- ===================== PROJECT MODALS ===================== -->
+  <!-- Edit the project details below for each of your NDA projects -->
+  <div class="project-modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="project-modal" id="modalBox">
+      <button class="project-modal-close" onclick="closeModalDirect()">✕</button>
+      <div class="project-modal-img" id="modalImg">
+        <!-- Image loads dynamically -->
+      </div>
+      <div class="project-modal-tag" id="modalTag"></div>
+      <div class="project-modal-title" id="modalTitle"></div>
+      <div class="project-modal-body" id="modalBody"></div>
+      <div class="project-modal-nda">🔒 NDA Protected — Shared with permission</div>
+    </div>
+  </div>
+
+  <script src="nav.js"></script>
+  <script>
+    // =============================================
+    // CHANGE PASSWORD HERE
+    // =============================================
+    const PORTFOLIO_PASSWORD = 'axsoal2026';
+    // =============================================
+
+    // =============================================
+    // EDIT YOUR PROJECT DETAILS HERE
+    // Add/remove projects as needed
+    // =============================================
+    const projects = [
+      {
+        tag: 'Residential · Living Room',
+        title: 'Project 01 — [Your Project Title]',
+        // image: 'images/project-1a.jpg',  // Uncomment and add your image
+        body: 'Describe this project here — the brief, the vision, the challenges, and the result. What made this space unique? What did the client love about the final outcome? Keep it warm and specific, but be careful not to reveal identifying details covered by your NDA.',
+      },
+      {
+        tag: 'Residential · Primary Suite',
+        title: 'Project 02 — [Your Project Title]',
+        body: 'Describe this project here. Focus on the design decisions, material choices, and how the space transformed. You can speak to the general location (e.g., "a downtown high-rise" or "a suburban family home") without naming specifics.',
+      },
+      {
+        tag: 'Residential · Kitchen',
+        title: 'Project 03 — [Your Project Title]',
+        body: 'Describe this project here. What was the scope? What elements did you specify or source? What was the before and after like? The more specific the detail (without breaking NDA), the more compelling your portfolio reads.',
+      },
+      {
+        tag: 'Residential · Dining Room',
+        title: 'Project 04 — [Your Project Title]',
+        body: 'Describe this project here.',
+      },
+      {
+        tag: 'Residential · Full Home Redesign',
+        title: 'Project 05 — [Your Project Title]',
+        body: 'Describe this project here. Full-home projects are particularly impressive to showcase — walk through the key spaces and the overall design concept that tied everything together.',
+      },
+      {
+        tag: 'Detail · Styling',
+        title: 'Project 06 — [Your Project Title]',
+        body: 'Describe this project here.',
+      },
+      {
+        tag: 'Residential · Bathroom',
+        title: 'Project 07 — [Your Project Title]',
+        body: 'Describe this project here.',
+      },
+      {
+        tag: 'Residential · Home Office',
+        title: 'Project 08 — [Your Project Title]',
+        body: 'Describe this project here.',
+      },
+    ];
+
+    // --- Password Logic ---
+    const gate = document.getElementById('passwordGate');
+    const main = document.getElementById('mainContent');
+    const input = document.getElementById('passwordInput');
+    const error = document.getElementById('passwordError');
+
+    if (sessionStorage.getItem('interior_unlocked') === 'true') {
+      gate.style.display = 'none';
+      main.style.display = 'block';
+    }
+
+    function checkPassword() {
+      if (input.value === PORTFOLIO_PASSWORD) {
+        sessionStorage.setItem('interior_unlocked', 'true');
+        gate.style.opacity = '0';
+        gate.style.transition = 'opacity 0.45s ease';
+        setTimeout(() => {
+          gate.style.display = 'none';
+          main.style.display = 'block';
+        }, 450);
+      } else {
+        error.textContent = 'Incorrect password. Please try again.';
+        input.value = '';
+        input.focus();
+        setTimeout(() => { error.textContent = ''; }, 3000);
+      }
+    }
+
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') checkPassword(); });
+
+    // --- Modal Logic ---
+    function openModal(idx) {
+      const p = projects[idx];
+      if (!p) return;
+      const overlay = document.getElementById('modalOverlay');
+      const imgEl = document.getElementById('modalImg');
+
+      document.getElementById('modalTag').textContent = p.tag;
+      document.getElementById('modalTitle').textContent = p.title;
+      document.getElementById('modalBody').textContent = p.body;
+
+      if (p.image) {
+        imgEl.innerHTML = `<img src="${p.image}" alt="${p.title}">`;
+      } else {
+        imgEl.innerHTML = `<span>Upload project photo</span>`;
+      }
+
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(e) {
+      if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
+    }
+
+    function closeModalDirect() {
+      document.getElementById('modalOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModalDirect();
+    });
+  </script>
+</body>
+</html>
