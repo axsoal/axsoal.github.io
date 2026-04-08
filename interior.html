@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* LANDING */
     .interior-landing { padding: calc(var(--nav-h) + 5rem) 2.5rem 6rem; max-width: var(--max-w); margin: 0 auto; }
     .interior-options { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 4rem; }
     .interior-option { padding: 3.5rem 3rem; border: 1px solid var(--linen-light); background: var(--ivory); cursor: pointer; text-decoration: none; color: inherit; display: block; position: relative; overflow: hidden; transition: background 0.3s; }
@@ -17,11 +18,115 @@
     .interior-option:hover::before { transform: scaleX(1); }
     .interior-option-num { font-size: 10px; letter-spacing: 0.2em; color: var(--linen); margin-bottom: 1.5rem; }
     .interior-option h3 { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 300; color: var(--wine-dark); margin-bottom: 1rem; line-height: 1.2; }
-    .interior-option p { font-size: 12px; color: var(--taupe-light); line-height: 1.8; margin-bottom: 2rem; }
+    .interior-option p { font-size: 12px; color: var(--taupe-light); line-height: 1.8; margin-bottom: 1.5rem; }
     .interior-option-arrow { font-size: 18px; color: var(--wine); transition: transform 0.2s; }
     .interior-option:hover .interior-option-arrow { transform: translateX(6px); }
     .interior-option-tag { display: inline-block; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--wine); background: var(--linen-light); border: 1px solid var(--linen); padding: 3px 10px; margin-bottom: 1rem; }
-    @media (max-width: 700px) { .interior-options { grid-template-columns: 1fr; } }
+    .interior-option--soon { cursor: default; opacity: 0.78; }
+    .interior-option--soon:hover { background: var(--ivory); }
+    .interior-option--soon:hover::before { transform: scaleX(0); }
+    .interior-option--soon:hover .interior-option-arrow { transform: none; }
+
+    /* PROJECT CARDS */
+    .projects-section { padding: 4rem 2.5rem 6rem; max-width: var(--max-w); margin: 0 auto; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+    .project-thumb {
+      background: var(--linen-light);
+      cursor: pointer;
+      overflow: hidden;
+      transition: opacity 0.2s;
+      position: relative;
+    }
+    .project-thumb:hover { opacity: 0.9; }
+    .project-thumb-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--linen);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .project-thumb-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .project-thumb:hover .project-thumb-img img { transform: scale(1.03); }
+    .project-thumb-img-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+    .project-thumb-img-placeholder span { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+    .project-thumb-info { padding: 1.25rem 1.5rem 1.5rem; }
+    .project-thumb-tag { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--wine); margin-bottom: 0.4rem; }
+    .project-thumb-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 300; color: var(--wine-dark); margin-bottom: 0.4rem; }
+    .project-thumb-loc { font-size: 11px; color: var(--taupe-light); }
+    .project-thumb-count {
+      position: absolute; top: 12px; right: 12px;
+      background: rgba(100,2,25,0.85); color: #fff;
+      font-size: 10px; letter-spacing: 0.1em;
+      padding: 4px 10px;
+    }
+    .project-thumb-expand {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--wine); margin-top: 0.75rem;
+    }
+    .project-thumb-expand svg { width: 14px; height: 14px; }
+
+    /* ALBUM LIGHTBOX */
+    .album-overlay {
+      position: fixed; inset: 0;
+      background: rgba(26,10,14,0.92);
+      z-index: 400;
+      display: flex; flex-direction: column;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .album-overlay.open { opacity: 1; pointer-events: all; }
+    .album-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid rgba(209,199,189,0.2);
+      flex-shrink: 0;
+    }
+    .album-header-left { display: flex; flex-direction: column; gap: 2px; }
+    .album-header-tag { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--linen); opacity: 0.7; }
+    .album-header-title { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 300; color: var(--linen-light); }
+    .album-close { background: none; border: none; color: var(--linen); font-size: 22px; cursor: pointer; line-height: 1; opacity: 0.8; transition: opacity 0.2s; }
+    .album-close:hover { opacity: 1; }
+    .album-main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 1.5rem 4rem; min-height: 0; position: relative; }
+    .album-img-wrap { max-height: 100%; display: flex; align-items: center; justify-content: center; }
+    .album-img-wrap img { max-height: calc(100vh - 220px); max-width: 100%; object-fit: contain; display: block; }
+    .album-img-placeholder { width: 600px; max-width: 80vw; aspect-ratio: 4/3; background: rgba(209,199,189,0.1); border: 1px solid rgba(209,199,189,0.2); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; }
+    .album-img-placeholder span { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(209,199,189,0.5); }
+    .album-img-placeholder small { font-size: 10px; color: rgba(209,199,189,0.35); letter-spacing: 0.05em; }
+    .album-nav-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(100,2,25,0.7); border: none; color: #fff;
+      width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 18px; transition: background 0.2s;
+    }
+    .album-nav-btn:hover { background: var(--wine); }
+    .album-nav-prev { left: 1rem; }
+    .album-nav-next { right: 1rem; }
+    .album-footer {
+      padding: 1rem 2rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid rgba(209,199,189,0.2);
+      flex-shrink: 0;
+    }
+    .album-counter { font-size: 11px; letter-spacing: 0.15em; color: var(--linen); opacity: 0.7; }
+    .album-desc { font-size: 12px; color: var(--linen); opacity: 0.8; max-width: 500px; line-height: 1.7; }
+    .album-thumbs { display: flex; gap: 8px; overflow-x: auto; padding: 0.5rem 2rem; flex-shrink: 0; }
+    .album-thumb {
+      width: 64px; height: 48px; flex-shrink: 0;
+      background: rgba(209,199,189,0.15); border: 2px solid transparent;
+      cursor: pointer; overflow: hidden; transition: border-color 0.15s;
+    }
+    .album-thumb.active { border-color: var(--wine); }
+    .album-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .album-thumb-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+    .album-thumb-placeholder span { font-size: 8px; color: rgba(209,199,189,0.4); }
+
+    @media (max-width: 700px) {
+      .interior-options { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .album-main { padding: 1rem 3rem; }
+    }
   </style>
 </head>
 <body>
@@ -38,28 +143,27 @@
     <button class="nav-toggle" aria-label="menu">☰</button>
   </nav>
 
-  <!-- LANDING: choose a sub-page -->
+  <!-- LANDING -->
   <div id="landingView">
     <div class="interior-landing fade-up">
       <div class="page-eyebrow">Interior Design</div>
       <h1 class="page-title">Design rooted<br>in <em>intention.</em></h1>
-      <p class="page-desc">A background in Interior Architecture and Design, shaped by three years of professional practice and a deep belief that spaces should reflect the people within them.</p>
+      <p class="page-desc">With a Bachelor's degree in Interior Architecture and Design, three years of experience at a commercial firm, and recognition as an Interior Design 30 Under 30 nominee in Austin, Texas, my approach goes beyond aesthetics. My goal is to design spaces that support intentional living — environments that align with your energy, elevate your well-being, and reflect who you're becoming, not just where you are.</p>
 
       <div class="interior-options">
         <a class="interior-option" onclick="showPortfolio(); return false;" href="#">
           <div class="interior-option-num">01</div>
           <h3>Interior Architecture &amp; Design Portfolio</h3>
-          <p>A curated look at residential projects completed under NDA. Password protected — request access to view.</p>
+          <p>A curated look at design projects from my professional career. Password protected — request access to view.</p>
           <div class="interior-option-arrow">→</div>
         </a>
 
-        <a class="interior-option" onclick="showVirtual(); return false;" href="#">
+        <div class="interior-option interior-option--soon">
           <div class="interior-option-num">02</div>
-          <div class="interior-option-tag">Coming Soon</div>
           <h3>Virtual Design</h3>
           <p>Online interior decorating and virtual design consultations — the same elevated approach, delivered remotely.</p>
-          <div class="interior-option-arrow" style="opacity:0.4;">→</div>
-        </a>
+          <div class="interior-option-tag">Coming Soon</div>
+        </div>
       </div>
     </div>
   </div>
@@ -77,62 +181,143 @@
         <p style="margin-top:1.5rem;font-size:11px;color:var(--taupe-light);">
           Don't have the password? <a href="contact.html" style="color:var(--wine);border-bottom:1px solid var(--linen);">Request access →</a>
         </p>
-        <p style="margin-top:0.75rem;"><button onclick="backToLanding()" style="background:none;border:none;font-size:11px;color:var(--taupe-light);cursor:pointer;font-family:var(--font-mono);">← Back</button></p>
+        <p style="margin-top:0.75rem;">
+          <button onclick="backToLanding()" style="background:none;border:none;font-size:11px;color:var(--taupe-light);cursor:pointer;font-family:var(--font-mono);">← Back</button>
+        </p>
       </div>
     </div>
   </div>
 
-  <!-- PORTFOLIO (after unlock) -->
+  <!-- PORTFOLIO -->
   <div id="portfolioView" style="display:none;">
     <div class="page-header">
       <div class="page-eyebrow">Interior Architecture &amp; Design Portfolio</div>
-      <h1 class="page-title">Residential <em>Work</em></h1>
-      <p class="page-desc">A curated look at residential projects — spaces designed around the people who call them home. Many of these projects are covered by NDAs; imagery and identifying details have been handled with care.</p>
+      <h1 class="page-title"><em>Projects</em></h1>
+      <p class="page-desc">A curated selection of projects from my professional design career. Identifying details and client names have been withheld where applicable. Click any project to expand the full photo album.</p>
     </div>
 
     <div class="nda-banner" style="margin: 0 2.5rem; max-width: calc(var(--max-w) - 5rem); margin-left: auto; margin-right: auto;">
-      <p><strong>NDA Notice —</strong> Projects shown here were completed under non-disclosure agreements. Identifying details, client names, and specific locations have been withheld. Photos are shared with permission or appropriately anonymized.</p>
+      <p><strong>Confidentiality Notice —</strong> Some projects shown here may be subject to confidentiality agreements. Certain identifying details, client names, and location specifics have been omitted out of respect for professional relationships. Click any project to expand the full photo album.</p>
     </div>
 
-    <section class="portfolio-section">
-      <div class="portfolio-grid">
-        <div class="p-card wide" onclick="openModal(0)"><div class="p-card-img" style="background:var(--linen);"><div class="p-card-img-placeholder"><span>Upload project photo</span></div></div><div class="p-card-info"><div class="p-card-tag">Residential · Living Room</div><div class="p-card-title">Project 01 — [Your Title]</div></div></div>
-        <div class="p-card tall" onclick="openModal(1)"><div class="p-card-img" style="background:#c4b0a8;"><div class="p-card-img-placeholder"><span>Upload project photo</span></div></div><div class="p-card-info"><div class="p-card-tag">Residential · Primary Suite</div><div class="p-card-title">Project 02 — [Your Title]</div></div></div>
-      </div>
-      <div class="portfolio-grid">
-        <div class="p-card half" onclick="openModal(2)"><div class="p-card-img" style="background:#b5a898;"><div class="p-card-img-placeholder"><span>Upload project photo</span></div></div><div class="p-card-info"><div class="p-card-tag">Residential · Kitchen</div><div class="p-card-title">Project 03 — [Your Title]</div></div></div>
-        <div class="p-card half" onclick="openModal(3)"><div class="p-card-img" style="background:#a89080;"><div class="p-card-img-placeholder"><span>Upload project photo</span></div></div><div class="p-card-info"><div class="p-card-tag">Residential · Dining Room</div><div class="p-card-title">Project 04 — [Your Title]</div></div></div>
-      </div>
-      <div class="portfolio-grid">
-        <div class="p-card full" onclick="openModal(4)"><div class="p-card-img" style="background:#9e9080;"><div class="p-card-img-placeholder"><span>Upload project photo</span></div></div><div class="p-card-info"><div class="p-card-tag">Residential · Full Home Redesign</div><div class="p-card-title">Project 05 — [Your Title]</div></div></div>
-      </div>
-      <div class="portfolio-grid">
-        <div class="p-card third" onclick="openModal(5)"><div class="p-card-img" style="background:#c8bbab;"><div class="p-card-img-placeholder"><span>Upload project photo</span></div></div><div class="p-card-info"><div class="p-card-tag">Detail · Styling</div><div class="p-card-title">Project 06 — [Your Title]</div></div></div>
-        <div class="p-card third" onclick="openModal(6)"><div class="p-card-img" style="background:#a0937f;"><div class="p-card-img-placeholder"><span>Upload project photo</span></div></div><div class="p-card-info"><div class="p-card-tag">Residential · Bathroom</div><div class="p-card-title">Project 07 — [Your Title]</div></div></div>
-        <div class="p-card third" onclick="openModal(7)"><div class="p-card-img" style="background:#b8ac9c;"><div class="p-card-img-placeholder"><span>Upload project photo</span></div></div><div class="p-card-info"><div class="p-card-tag">Residential · Home Office</div><div class="p-card-title">Project 08 — [Your Title]</div></div></div>
+    <section class="projects-section">
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Project 1 -->
+        <div class="project-thumb" onclick="openAlbum(0)">
+          <div class="project-thumb-img" style="background:#c4b0a8;">
+            <!-- Cover image: <img src="images/p1-cover.jpg" alt="Project 1"> -->
+            <div class="project-thumb-img-placeholder"><span>Project cover photo</span></div>
+            <div class="project-thumb-count">8 photos</div>
+          </div>
+          <div class="project-thumb-info">
+            <div class="project-thumb-tag">Commercial · [Project Type]</div>
+            <div class="project-thumb-title">[Project Title]</div>
+            <div class="project-thumb-loc">[City, State] · [Year]</div>
+            <div class="project-thumb-expand">
+              <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              View album
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-thumb" onclick="openAlbum(1)">
+          <div class="project-thumb-img" style="background:#b5a898;">
+            <div class="project-thumb-img-placeholder"><span>Project cover photo</span></div>
+            <div class="project-thumb-count">6 photos</div>
+          </div>
+          <div class="project-thumb-info">
+            <div class="project-thumb-tag">Commercial · [Project Type]</div>
+            <div class="project-thumb-title">[Project Title]</div>
+            <div class="project-thumb-loc">[City, State] · [Year]</div>
+            <div class="project-thumb-expand">
+              <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              View album
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-thumb" onclick="openAlbum(2)">
+          <div class="project-thumb-img" style="background:#a89080;">
+            <div class="project-thumb-img-placeholder"><span>Project cover photo</span></div>
+            <div class="project-thumb-count">10 photos</div>
+          </div>
+          <div class="project-thumb-info">
+            <div class="project-thumb-tag">Commercial · [Project Type]</div>
+            <div class="project-thumb-title">[Project Title]</div>
+            <div class="project-thumb-loc">[City, State] · [Year]</div>
+            <div class="project-thumb-expand">
+              <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              View album
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-thumb" onclick="openAlbum(3)">
+          <div class="project-thumb-img" style="background:#9e9080;">
+            <div class="project-thumb-img-placeholder"><span>Project cover photo</span></div>
+            <div class="project-thumb-count">7 photos</div>
+          </div>
+          <div class="project-thumb-info">
+            <div class="project-thumb-tag">Commercial · [Project Type]</div>
+            <div class="project-thumb-title">[Project Title]</div>
+            <div class="project-thumb-loc">[City, State] · [Year]</div>
+            <div class="project-thumb-expand">
+              <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              View album
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-thumb" onclick="openAlbum(4)">
+          <div class="project-thumb-img" style="background:#c8bbab;">
+            <div class="project-thumb-img-placeholder"><span>Project cover photo</span></div>
+            <div class="project-thumb-count">5 photos</div>
+          </div>
+          <div class="project-thumb-info">
+            <div class="project-thumb-tag">Residential · [Project Type]</div>
+            <div class="project-thumb-title">[Project Title]</div>
+            <div class="project-thumb-loc">[City, State] · [Year]</div>
+            <div class="project-thumb-expand">
+              <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              View album
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <div style="padding:2rem 2.5rem;max-width:var(--max-w);margin:0 auto;">
+    <div style="padding:0 2.5rem 3rem;max-width:var(--max-w);margin:0 auto;">
       <button onclick="backToLanding()" style="background:none;border:none;font-size:12px;color:var(--wine);cursor:pointer;font-family:var(--font-mono);letter-spacing:0.1em;">← Back to Interior Design</button>
     </div>
   </div>
 
-  <!-- VIRTUAL DESIGN (Coming Soon) -->
-  <div id="virtualView" style="display:none;">
-    <div class="page-header">
-      <div class="page-eyebrow">Virtual Design</div>
-      <h1 class="page-title">Beautiful spaces,<br><em>wherever you are.</em></h1>
+  <!-- ALBUM LIGHTBOX -->
+  <div class="album-overlay" id="albumOverlay">
+    <div class="album-header">
+      <div class="album-header-left">
+        <div class="album-header-tag" id="albumTag"></div>
+        <div class="album-header-title" id="albumTitle"></div>
+      </div>
+      <button class="album-close" onclick="closeAlbum()">✕</button>
     </div>
-    <section class="coming-soon-section">
-      <div class="page-eyebrow" style="color:var(--linen);">Coming Soon</div>
-      <div class="coming-soon-pill">Virtual Interior Design</div>
-      <h2>The same elevated approach,<br><em>delivered remotely.</em></h2>
-      <p>Online interior decorating and virtual design consultations are on the horizon. Join the waitlist to be the first to know when bookings open.</p>
-      <a href="contact.html" class="btn-primary" style="background:var(--linen-light);color:var(--wine-dark);">Join the Waitlist</a>
-    </section>
-    <div style="padding:2rem 2.5rem;max-width:var(--max-w);margin:0 auto;">
-      <button onclick="backToLanding()" style="background:none;border:none;font-size:12px;color:var(--wine);cursor:pointer;font-family:var(--font-mono);letter-spacing:0.1em;">← Back to Interior Design</button>
+
+    <div class="album-main">
+      <button class="album-nav-btn album-nav-prev" onclick="albumNav(-1)">‹</button>
+      <div class="album-img-wrap" id="albumImgWrap"></div>
+      <button class="album-nav-btn album-nav-next" onclick="albumNav(1)">›</button>
+    </div>
+
+    <div class="album-thumbs" id="albumThumbs"></div>
+
+    <div class="album-footer">
+      <div class="album-counter" id="albumCounter"></div>
+      <div class="album-desc" id="albumDesc"></div>
     </div>
   </div>
 
@@ -149,38 +334,104 @@
     </div>
   </footer>
 
-  <!-- Project Modal -->
-  <div class="project-modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-    <div class="project-modal" id="modalBox">
-      <button class="project-modal-close" onclick="closeModalDirect()">✕</button>
-      <div class="project-modal-img" id="modalImg"><span>Upload project photo</span></div>
-      <div class="project-modal-tag" id="modalTag"></div>
-      <div class="project-modal-title" id="modalTitle"></div>
-      <div class="project-modal-body" id="modalBody"></div>
-      <div class="project-modal-nda">🔒 NDA Protected — Shared with permission</div>
-    </div>
-  </div>
-
   <script src="nav.js"></script>
   <script>
     // =============================================
-    // PASSWORD — change here
+    // PASSWORD
     // =============================================
     const PORTFOLIO_PASSWORD = 'iadax';
 
+    // =============================================
+    // PROJECTS — Edit titles, tags, descriptions,
+    // and image arrays for each project.
+    //
+    // For images: add src paths like 'images/p1-01.jpg'
+    // For each image you can add a caption in 'desc'
+    // =============================================
     const projects = [
-      { tag: 'Residential · Living Room', title: 'Project 01 — [Your Title]', body: 'Describe this project here — the brief, the vision, and the result.' },
-      { tag: 'Residential · Primary Suite', title: 'Project 02 — [Your Title]', body: 'Describe this project here.' },
-      { tag: 'Residential · Kitchen', title: 'Project 03 — [Your Title]', body: 'Describe this project here.' },
-      { tag: 'Residential · Dining Room', title: 'Project 04 — [Your Title]', body: 'Describe this project here.' },
-      { tag: 'Residential · Full Home', title: 'Project 05 — [Your Title]', body: 'Describe this project here.' },
-      { tag: 'Detail · Styling', title: 'Project 06 — [Your Title]', body: 'Describe this project here.' },
-      { tag: 'Residential · Bathroom', title: 'Project 07 — [Your Title]', body: 'Describe this project here.' },
-      { tag: 'Residential · Home Office', title: 'Project 08 — [Your Title]', body: 'Describe this project here.' },
+      {
+        tag: 'Commercial · [Project Type]',
+        title: '[Project Title]',
+        location: '[City, State] · [Year]',
+        desc: 'Add your project description here — the brief, design concept, scope of work, and outcome.',
+        images: [
+          { src: null, caption: 'Add caption for photo 1' },
+          { src: null, caption: 'Add caption for photo 2' },
+          { src: null, caption: 'Add caption for photo 3' },
+          { src: null, caption: 'Add caption for photo 4' },
+          { src: null, caption: 'Add caption for photo 5' },
+          { src: null, caption: 'Add caption for photo 6' },
+          { src: null, caption: 'Add caption for photo 7' },
+          { src: null, caption: 'Add caption for photo 8' },
+        ]
+      },
+      {
+        tag: 'Commercial · [Project Type]',
+        title: '[Project Title]',
+        location: '[City, State] · [Year]',
+        desc: 'Add your project description here.',
+        images: [
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+        ]
+      },
+      {
+        tag: 'Commercial · [Project Type]',
+        title: '[Project Title]',
+        location: '[City, State] · [Year]',
+        desc: 'Add your project description here.',
+        images: [
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+        ]
+      },
+      {
+        tag: 'Commercial · [Project Type]',
+        title: '[Project Title]',
+        location: '[City, State] · [Year]',
+        desc: 'Add your project description here.',
+        images: [
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+        ]
+      },
+      {
+        tag: 'Residential · [Project Type]',
+        title: '[Project Title]',
+        location: '[City, State] · [Year]',
+        desc: 'Add your project description here.',
+        images: [
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+          { src: null, caption: 'Add caption' },
+        ]
+      },
     ];
 
+    let currentProject = 0;
+    let currentImg = 0;
+
     function show(id) {
-      ['landingView','gateView','portfolioView','virtualView'].forEach(v => {
+      ['landingView','gateView','portfolioView'].forEach(v => {
         document.getElementById(v).style.display = v === id ? 'block' : 'none';
       });
     }
@@ -190,36 +441,102 @@
       else { show('gateView'); setTimeout(() => document.getElementById('passwordInput').focus(), 100); }
     }
 
-    function showVirtual() { show('virtualView'); }
     function backToLanding() { show('landingView'); }
 
-    const input = document.getElementById('passwordInput');
-    const error = document.getElementById('passwordError');
+    const pwInput = document.getElementById('passwordInput');
+    const pwError = document.getElementById('passwordError');
 
     function checkPassword() {
-      if (input.value === PORTFOLIO_PASSWORD) {
+      if (pwInput.value === PORTFOLIO_PASSWORD) {
         sessionStorage.setItem('interior_unlocked', 'true');
         show('portfolioView');
       } else {
-        error.textContent = 'Incorrect password. Please try again.';
-        input.value = ''; input.focus();
-        setTimeout(() => { error.textContent = ''; }, 3000);
+        pwError.textContent = 'Incorrect password. Please try again.';
+        pwInput.value = ''; pwInput.focus();
+        setTimeout(() => { pwError.textContent = ''; }, 3000);
       }
     }
+    pwInput.addEventListener('keydown', e => { if (e.key === 'Enter') checkPassword(); });
 
-    input.addEventListener('keydown', e => { if (e.key === 'Enter') checkPassword(); });
-
-    function openModal(idx) {
-      const p = projects[idx]; if (!p) return;
-      document.getElementById('modalTag').textContent = p.tag;
-      document.getElementById('modalTitle').textContent = p.title;
-      document.getElementById('modalBody').textContent = p.body;
-      document.getElementById('modalOverlay').classList.add('open');
+    // Album logic
+    function openAlbum(idx) {
+      currentProject = idx;
+      currentImg = 0;
+      const p = projects[idx];
+      document.getElementById('albumTag').textContent = p.tag;
+      document.getElementById('albumTitle').textContent = p.title;
+      renderAlbumImg();
+      renderThumbs();
+      document.getElementById('albumOverlay').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
-    function closeModal(e) { if (e.target === document.getElementById('modalOverlay')) closeModalDirect(); }
-    function closeModalDirect() { document.getElementById('modalOverlay').classList.remove('open'); document.body.style.overflow = ''; }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+
+    function closeAlbum() {
+      document.getElementById('albumOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function renderAlbumImg() {
+      const p = projects[currentProject];
+      const img = p.images[currentImg];
+      const wrap = document.getElementById('albumImgWrap');
+      const total = p.images.length;
+
+      if (img.src) {
+        wrap.innerHTML = `<img src="${img.src}" alt="${p.title} photo ${currentImg + 1}">`;
+      } else {
+        const num = currentImg + 1;
+        wrap.innerHTML = `<div class="album-img-placeholder">
+          <span>Photo ${num} of ${total}</span>
+          <small>Replace with: images/p${currentProject+1}-0${num}.jpg</small>
+        </div>`;
+      }
+
+      document.getElementById('albumCounter').textContent = `${currentImg + 1} / ${total}`;
+      document.getElementById('albumDesc').textContent = img.caption || p.desc;
+
+      // Update thumb highlights
+      document.querySelectorAll('.album-thumb').forEach((t, i) => {
+        t.classList.toggle('active', i === currentImg);
+      });
+    }
+
+    function renderThumbs() {
+      const p = projects[currentProject];
+      const container = document.getElementById('albumThumbs');
+      container.innerHTML = p.images.map((img, i) => `
+        <div class="album-thumb ${i === 0 ? 'active' : ''}" onclick="goToImg(${i})">
+          ${img.src
+            ? `<img src="${img.src}" alt="thumb ${i+1}">`
+            : `<div class="album-thumb-placeholder"><span>${i+1}</span></div>`
+          }
+        </div>
+      `).join('');
+    }
+
+    function goToImg(i) {
+      currentImg = i;
+      renderAlbumImg();
+    }
+
+    function albumNav(dir) {
+      const p = projects[currentProject];
+      currentImg = (currentImg + dir + p.images.length) % p.images.length;
+      renderAlbumImg();
+    }
+
+    // Keyboard nav
+    document.addEventListener('keydown', e => {
+      if (!document.getElementById('albumOverlay').classList.contains('open')) return;
+      if (e.key === 'ArrowRight') albumNav(1);
+      if (e.key === 'ArrowLeft') albumNav(-1);
+      if (e.key === 'Escape') closeAlbum();
+    });
+
+    // Close on overlay click
+    document.getElementById('albumOverlay').addEventListener('click', e => {
+      if (e.target === document.getElementById('albumOverlay')) closeAlbum();
+    });
   </script>
 </body>
 </html>
