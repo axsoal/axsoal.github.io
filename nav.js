@@ -1,9 +1,14 @@
-// Mobile nav toggle
 const toggle = document.querySelector('.nav-toggle');
 const mobileMenu = document.createElement('div');
 mobileMenu.className = 'nav-mobile-menu';
 
-[['index.html','Home'],['interior.html','Interior Design'],['ugc.html','UGC'],['contact.html','Contact']].forEach(([href, text]) => {
+[
+  ['index.html','Home'],
+  ['ugc.html','UGC'],
+  ['strategy.html','Strategy'],
+  ['interior.html','Interior Design'],
+  ['contact.html','Contact']
+].forEach(([href, text]) => {
   const a = document.createElement('a');
   a.href = href; a.textContent = text;
   mobileMenu.appendChild(a);
@@ -27,7 +32,6 @@ mobileMenu.querySelectorAll('a').forEach(a => {
   });
 });
 
-// Scroll reveal
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
