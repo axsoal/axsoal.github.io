@@ -30,34 +30,141 @@
     <p class="page-desc">Authentic content that converts — scroll-stopping video and photo content for lifestyle, home, and wellness brands.</p>
   </div>
 
+  <!-- FEATURED VIRAL VIDEO ROW -->
+  <section class="ugc-featured-section">
+    <div class="ugc-featured-inner">
+
+      <!-- Left: iPhone with hardcoded video — click to open TikTok -->
+      <div class="ugc-featured-phone">
+        <a href="https://www.tiktok.com/@anniexyaps/video/7541589553472113934" target="_blank" class="ugc-featured-link" aria-label="Watch on TikTok">
+          <div class="iphone-frame">
+            <div class="iphone-outer">
+              <div class="iphone-screen">
+                <video src="images/featured-ugc.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;border-radius:26px;"></video>
+                <div class="ugc-featured-tiktok-badge">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+                  Watch on TikTok
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <div class="ugc-featured-phone-label">
+          <div class="ugc-row-label" style="padding:0;border:none;margin:0;">Organic · No Ads</div>
+        </div>
+      </div>
+
+      <!-- Right: description + stats -->
+      <div class="ugc-featured-content">
+        <div class="page-eyebrow" style="margin-bottom:1rem;">Featured Performance</div>
+        <h2 class="ugc-featured-title">Authentic content<br><em>drives virality.</em></h2>
+        <p class="ugc-featured-desc">This is what happens when content is created with genuine intention. No ad spend. No boosting. Just a relatable, real moment that resonated — and the algorithm responded. Authentic storytelling doesn't just perform, it compounds, building trust, retention, and reach organically.</p>
+
+        <!-- Stats grid -->
+        <div class="ugc-featured-stats">
+          <div class="ugc-featured-stat">
+            <span class="ugc-stat-num">819K</span>
+            <span class="ugc-stat-lbl">Views</span>
+          </div>
+          <div class="ugc-featured-stat">
+            <span class="ugc-stat-num">84K</span>
+            <span class="ugc-stat-lbl">Likes</span>
+          </div>
+          <div class="ugc-featured-stat">
+            <span class="ugc-stat-num">7,151</span>
+            <span class="ugc-stat-lbl">Saves</span>
+          </div>
+          <div class="ugc-featured-stat">
+            <span class="ugc-stat-num">2,110</span>
+            <span class="ugc-stat-lbl">Shares</span>
+          </div>
+        </div>
+
+        <div class="ugc-featured-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>
+          100% organic &mdash; zero paid promotion
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Phone Grid Section -->
   <section class="ugc-phones-section">
 
     <!-- ROW 1: Beauty & Cosmetics -->
     <div class="ugc-row-label">Portfolio | Beauty and Cosmetics</div>
     <div class="ugc-phones-grid">
-      <div class="iphone-frame" id="f0"><div class="iphone-outer"><div class="iphone-screen" id="sc0" onclick="document.getElementById('pf0').click()"><div class="iphone-drop-zone" id="pd0"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf0" accept="video/*,image/*" onchange="handleFile(this,0)"><button class="iphone-remove-btn" id="rm0" onclick="removeMedia(0)">Remove</button></div>
-      <div class="iphone-frame" id="f1"><div class="iphone-outer"><div class="iphone-screen" id="sc1" onclick="document.getElementById('pf1').click()"><div class="iphone-drop-zone" id="pd1"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf1" accept="video/*,image/*" onchange="handleFile(this,1)"><button class="iphone-remove-btn" id="rm1" onclick="removeMedia(1)">Remove</button></div>
-      <div class="iphone-frame" id="f2"><div class="iphone-outer"><div class="iphone-screen" id="sc2" onclick="document.getElementById('pf2').click()"><div class="iphone-drop-zone" id="pd2"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf2" accept="video/*,image/*" onchange="handleFile(this,2)"><button class="iphone-remove-btn" id="rm2" onclick="removeMedia(2)">Remove</button></div>
-      <div class="iphone-frame" id="f3"><div class="iphone-outer"><div class="iphone-screen" id="sc3" onclick="document.getElementById('pf3').click()"><div class="iphone-drop-zone" id="pd3"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf3" accept="video/*,image/*" onchange="handleFile(this,3)"><button class="iphone-remove-btn" id="rm3" onclick="removeMedia(3)">Remove</button></div>
+      <div class="iphone-frame" id="f0"><div class="iphone-outer"><div class="iphone-screen" id="sc0" onclick="document.getElementById('pf0').click()"><div class="iphone-drop-zone" id="pd0"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf0" accept="video/*,image/*" onchange="handleFile(this,0)"><button class="iphone-remove-btn" id="rm0" onclick="removeMedia(0)">Remove</button>
+      <div class="ugc-phone-label">
+        <div class="ugc-phone-cat">Beauty & Cosmetics</div>
+      </div>
+    </div>
+      <div class="iphone-frame" id="f1"><div class="iphone-outer"><div class="iphone-screen" id="sc1" onclick="document.getElementById('pf1').click()"><div class="iphone-drop-zone" id="pd1"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf1" accept="video/*,image/*" onchange="handleFile(this,1)"><button class="iphone-remove-btn" id="rm1" onclick="removeMedia(1)">Remove</button>
+      <div class="ugc-phone-label">
+        <div class="ugc-phone-cat">Beauty & Cosmetics</div>
+      </div>
+    </div>
+      <div class="iphone-frame" id="f2"><div class="iphone-outer"><div class="iphone-screen" id="sc2" onclick="document.getElementById('pf2').click()"><div class="iphone-drop-zone" id="pd2"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf2" accept="video/*,image/*" onchange="handleFile(this,2)"><button class="iphone-remove-btn" id="rm2" onclick="removeMedia(2)">Remove</button>
+      <div class="ugc-phone-label">
+        <div class="ugc-phone-cat">Beauty & Cosmetics</div>
+      </div>
+    </div>
+      <div class="iphone-frame" id="f3"><div class="iphone-outer"><div class="iphone-screen" id="sc3" onclick="document.getElementById('pf3').click()"><div class="iphone-drop-zone" id="pd3"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf3" accept="video/*,image/*" onchange="handleFile(this,3)"><button class="iphone-remove-btn" id="rm3" onclick="removeMedia(3)">Remove</button>
+      <div class="ugc-phone-label">
+        <div class="ugc-phone-cat">Beauty & Cosmetics</div>
+      </div>
+    </div>
     </div>
 
     <!-- ROW 2: Unboxing -->
     <div class="ugc-row-label">Portfolio | Unboxing</div>
     <div class="ugc-phones-grid">
-      <div class="iphone-frame" id="f4"><div class="iphone-outer"><div class="iphone-screen" id="sc4" onclick="document.getElementById('pf4').click()"><div class="iphone-drop-zone" id="pd4"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf4" accept="video/*,image/*" onchange="handleFile(this,4)"><button class="iphone-remove-btn" id="rm4" onclick="removeMedia(4)">Remove</button></div>
-      <div class="iphone-frame" id="f5"><div class="iphone-outer"><div class="iphone-screen" id="sc5" onclick="document.getElementById('pf5').click()"><div class="iphone-drop-zone" id="pd5"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf5" accept="video/*,image/*" onchange="handleFile(this,5)"><button class="iphone-remove-btn" id="rm5" onclick="removeMedia(5)">Remove</button></div>
-      <div class="iphone-frame" id="f6"><div class="iphone-outer"><div class="iphone-screen" id="sc6" onclick="document.getElementById('pf6').click()"><div class="iphone-drop-zone" id="pd6"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf6" accept="video/*,image/*" onchange="handleFile(this,6)"><button class="iphone-remove-btn" id="rm6" onclick="removeMedia(6)">Remove</button></div>
-      <div class="iphone-frame" id="f7"><div class="iphone-outer"><div class="iphone-screen" id="sc7" onclick="document.getElementById('pf7').click()"><div class="iphone-drop-zone" id="pd7"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf7" accept="video/*,image/*" onchange="handleFile(this,7)"><button class="iphone-remove-btn" id="rm7" onclick="removeMedia(7)">Remove</button></div>
+      <div class="iphone-frame" id="f4"><div class="iphone-outer"><div class="iphone-screen" id="sc4" onclick="document.getElementById('pf4').click()"><div class="iphone-drop-zone" id="pd4"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf4" accept="video/*,image/*" onchange="handleFile(this,4)"><button class="iphone-remove-btn" id="rm4" onclick="removeMedia(4)">Remove</button>
+      <div class="ugc-phone-label">
+        <div class="ugc-phone-cat">Unboxing</div>
+      </div>
+    </div>
+      <div class="iphone-frame" id="f5"><div class="iphone-outer"><div class="iphone-screen" id="sc5" onclick="document.getElementById('pf5').click()"><div class="iphone-drop-zone" id="pd5"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf5" accept="video/*,image/*" onchange="handleFile(this,5)"><button class="iphone-remove-btn" id="rm5" onclick="removeMedia(5)">Remove</button>
+      <div class="ugc-phone-label">
+        <div class="ugc-phone-cat">Unboxing</div>
+      </div>
+    </div>
+      <div class="iphone-frame" id="f6"><div class="iphone-outer"><div class="iphone-screen" id="sc6" onclick="document.getElementById('pf6').click()"><div class="iphone-drop-zone" id="pd6"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf6" accept="video/*,image/*" onchange="handleFile(this,6)"><button class="iphone-remove-btn" id="rm6" onclick="removeMedia(6)">Remove</button>
+      <div class="ugc-phone-label">
+        <div class="ugc-phone-cat">Unboxing</div>
+      </div>
+    </div>
+      <div class="iphone-frame" id="f7"><div class="iphone-outer"><div class="iphone-screen" id="sc7" onclick="document.getElementById('pf7').click()"><div class="iphone-drop-zone" id="pd7"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf7" accept="video/*,image/*" onchange="handleFile(this,7)"><button class="iphone-remove-btn" id="rm7" onclick="removeMedia(7)">Remove</button>
+      <div class="ugc-phone-label">
+        <div class="ugc-phone-cat">Unboxing</div>
+      </div>
+    </div>
     </div>
 
     <!-- ROW 3: Lifestyle & Experiences -->
     <div class="ugc-row-label">Portfolio | Lifestyle and Experiences</div>
     <div class="ugc-phones-grid">
-      <div class="iphone-frame" id="f8"><div class="iphone-outer"><div class="iphone-screen" id="sc8" onclick="document.getElementById('pf8').click()"><div class="iphone-drop-zone" id="pd8"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf8" accept="video/*,image/*" onchange="handleFile(this,8)"><button class="iphone-remove-btn" id="rm8" onclick="removeMedia(8)">Remove</button></div>
-      <div class="iphone-frame" id="f9"><div class="iphone-outer"><div class="iphone-screen" id="sc9" onclick="document.getElementById('pf9').click()"><div class="iphone-drop-zone" id="pd9"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf9" accept="video/*,image/*" onchange="handleFile(this,9)"><button class="iphone-remove-btn" id="rm9" onclick="removeMedia(9)">Remove</button></div>
-      <div class="iphone-frame" id="f10"><div class="iphone-outer"><div class="iphone-screen" id="sc10" onclick="document.getElementById('pf10').click()"><div class="iphone-drop-zone" id="pd10"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf10" accept="video/*,image/*" onchange="handleFile(this,10)"><button class="iphone-remove-btn" id="rm10" onclick="removeMedia(10)">Remove</button></div>
-      <div class="iphone-frame" id="f11"><div class="iphone-outer"><div class="iphone-screen" id="sc11" onclick="document.getElementById('pf11').click()"><div class="iphone-drop-zone" id="pd11"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf11" accept="video/*,image/*" onchange="handleFile(this,11)"><button class="iphone-remove-btn" id="rm11" onclick="removeMedia(11)">Remove</button></div>
+      <div class="iphone-frame" id="f8"><div class="iphone-outer"><div class="iphone-screen" id="sc8" onclick="document.getElementById('pf8').click()"><div class="iphone-drop-zone" id="pd8"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf8" accept="video/*,image/*" onchange="handleFile(this,8)"><button class="iphone-remove-btn" id="rm8" onclick="removeMedia(8)">Remove</button>
+      <div class="ugc-phone-label">
+        <div class="ugc-phone-cat">Lifestyle</div>
+      </div>
+    </div>
+      <div class="iphone-frame" id="f9"><div class="iphone-outer"><div class="iphone-screen" id="sc9" onclick="document.getElementById('pf9').click()"><div class="iphone-drop-zone" id="pd9"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf9" accept="video/*,image/*" onchange="handleFile(this,9)"><button class="iphone-remove-btn" id="rm9" onclick="removeMedia(9)">Remove</button>
+      <div class="ugc-phone-label">
+        <div class="ugc-phone-cat">Lifestyle</div>
+      </div>
+    </div>
+      <div class="iphone-frame" id="f10"><div class="iphone-outer"><div class="iphone-screen" id="sc10" onclick="document.getElementById('pf10').click()"><div class="iphone-drop-zone" id="pd10"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf10" accept="video/*,image/*" onchange="handleFile(this,10)"><button class="iphone-remove-btn" id="rm10" onclick="removeMedia(10)">Remove</button>
+      <div class="ugc-phone-label">
+        <div class="ugc-phone-cat">Lifestyle</div>
+      </div>
+    </div>
+      <div class="iphone-frame" id="f11"><div class="iphone-outer"><div class="iphone-screen" id="sc11" onclick="document.getElementById('pf11').click()"><div class="iphone-drop-zone" id="pd11"><div class="iphone-drop-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="iphone-drop-label">Tap to upload</div></div></div></div><input type="file" class="iphone-file-input" id="pf11" accept="video/*,image/*" onchange="handleFile(this,11)"><button class="iphone-remove-btn" id="rm11" onclick="removeMedia(11)">Remove</button>
+      <div class="ugc-phone-label">
+        <div class="ugc-phone-cat">Lifestyle</div>
+      </div>
+    </div>
     </div>
 
   </section>
@@ -100,6 +207,13 @@
 
   <script src="nav.js"></script>
   <script>
+    // PERSISTENT VIDEO TIP:
+    // To make videos stay after page refresh, save your video/image
+    // files into the "images/" folder and set the src directly, e.g.:
+    //   document.getElementById('sc0').innerHTML = '<video src="images/video1.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;border-radius:26px;"></video>';
+    //
+    // The tap-to-upload below is a live preview only — it clears on refresh.
+
     function handleFile(input, idx) {
       const file = input.files[0];
       if (!file) return;
@@ -109,10 +223,12 @@
       if (file.type.startsWith('video/')) {
         const vid = document.createElement('video');
         vid.src = url; vid.autoplay = true; vid.loop = true; vid.muted = true; vid.playsInline = true;
+        vid.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;border-radius:26px;';
         screen.appendChild(vid);
       } else {
         const img = document.createElement('img');
         img.src = url; img.alt = 'UGC content';
+        img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;border-radius:26px;';
         screen.appendChild(img);
       }
       const btn = document.getElementById('rm' + idx);

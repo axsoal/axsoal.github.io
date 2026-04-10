@@ -126,18 +126,27 @@
     /* Landing two-column layout with photo */
     .interior-landing-grid {
       display: grid;
-      grid-template-columns: 1fr 380px;
+      grid-template-columns: 1fr 360px;
       gap: 5rem;
-      align-items: center;
+      align-items: stretch;
       margin-bottom: 1rem;
+    }
+    .interior-landing-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .interior-landing-text .page-title { font-size: clamp(2.5rem, 5vw, 5rem); }
     .interior-landing-photo { position: relative; }
-    .int-photo-wrap { position: relative; }
+    .int-photo-wrap {
+      position: relative;
+      height: 100%;
+    }
     .int-photo-wrap img {
       width: 100%;
-      aspect-ratio: 3/4;
+      height: 100%;
       object-fit: cover;
+      object-position: center top;
       display: block;
     }
     .int-photo-badge {
@@ -168,8 +177,9 @@
       opacity: 0.8;
     }
     @media (max-width: 900px) {
-      .interior-landing-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .int-photo-wrap img { aspect-ratio: 4/3; }
+      .interior-landing-grid { grid-template-columns: 1fr; gap: 2.5rem; align-items: start; }
+      .int-photo-wrap { height: auto; }
+      .int-photo-wrap img { height: auto; aspect-ratio: 4/3; }
     }
     @media (max-width: 700px) {
       .interior-options { grid-template-columns: 1fr; }
@@ -204,9 +214,9 @@
         </div>
         <div class="interior-landing-photo">
           <div class="int-photo-wrap">
-            <img src="images/30under30.jpg" alt="Annie at Interior Design 30 Under 30 — Austin, Texas">
+            <img src="images/30under30.jpg" alt="Annie at Interior Design 30Under30 Nominee — Austin, Texas">
             <div class="int-photo-badge">
-              <span class="int-photo-badge-title">30 Under 30</span>
+              <span class="int-photo-badge-title">30Under30 Nominee</span>
               <span class="int-photo-badge-sub">Interior Design Magazine · Austin, TX</span>
             </div>
           </div>

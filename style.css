@@ -507,3 +507,146 @@ body {
   .iphone-frame, .iphone-outer { width: 100%; max-width: 160px; }
   .iphone-outer { height: auto; aspect-ratio: 9/19.5; }
 }
+
+/* ===== UGC FEATURED VIRAL ROW ===== */
+.ugc-featured-section {
+  padding: 4rem 2.5rem 3rem;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+.ugc-featured-inner {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.ugc-featured-phone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.ugc-featured-phone-label {
+  text-align: center;
+}
+.ugc-featured-content {}
+.ugc-featured-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--wine-dark);
+  margin-bottom: 1.25rem;
+}
+.ugc-featured-title em { font-style: italic; color: var(--wine); }
+.ugc-featured-desc {
+  font-size: 13px;
+  color: var(--taupe-light);
+  line-height: 1.9;
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+.ugc-featured-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: var(--linen);
+  margin-bottom: 1.5rem;
+}
+.ugc-featured-stat {
+  background: var(--ivory);
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+.ugc-stat-num {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--wine);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+.ugc-stat-lbl {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  display: block;
+}
+.ugc-featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--wine);
+  background: var(--linen-light);
+  border: 1px solid var(--linen);
+  padding: 6px 14px;
+}
+
+@media (max-width: 900px) {
+  .ugc-featured-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .ugc-featured-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== UGC FEATURED TIKTOK LINK ===== */
+.ugc-featured-link {
+  display: block;
+  text-decoration: none;
+  position: relative;
+}
+.ugc-featured-link .iphone-outer {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ugc-featured-link:hover .iphone-outer {
+  transform: translateY(-4px);
+  box-shadow: inset 0 0 0 2px #3a3a3c, 0 0 0 1px #111, 8px 20px 44px rgba(100,2,25,0.28);
+}
+.ugc-featured-tiktok-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(100, 2, 25, 0.88);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.ugc-featured-link:hover .ugc-featured-tiktok-badge {
+  opacity: 1;
+}
+
+/* ===== UGC PHONE LABELS ===== */
+.ugc-phones-grid { align-items: start; }
+.ugc-phone-label {
+  margin-top: 12px;
+  text-align: center;
+  padding: 0 4px;
+}
+.ugc-phone-cat {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--wine);
+  margin-bottom: 3px;
+}
+.ugc-phone-brand {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--wine-dark);
+  line-height: 1.3;
+}
