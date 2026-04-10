@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Products — AXSOAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== DIGITAL PRODUCTS — CARD DESIGNS ===== */
+
+    /* Etsy banner */
+    .etsy-banner {
+      background: var(--linen-light);
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--linen);
+    }
+    .etsy-banner-inner { max-width: 520px; margin: 0 auto; }
+    .etsy-icon { width: 44px; height: 44px; margin: 0 auto 1.25rem; }
+    .etsy-icon svg { width: 44px; height: 44px; }
+    .etsy-banner h2 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--wine-dark);
+      margin-bottom: 0.75rem;
+    }
+    .etsy-banner p {
+      font-size: 12px;
+      color: var(--taupe-light);
+      line-height: 1.9;
+      margin-bottom: 1.75rem;
+    }
+
+    /* Filter row */
+    .products-section { padding: 4rem 2.5rem 6rem; max-width: var(--max-w); margin: 0 auto; }
+
+    .products-filter {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .filter-btn {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border: 1px solid var(--linen);
+      background: none;
+      color: var(--taupe-light);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--wine);
+      border-color: var(--wine);
+      color: var(--white);
+    }
+
+    /* Card product grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: var(--ivory);
+      border: 1px solid var(--linen-light);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.25s, transform 0.2s;
+      cursor: pointer;
+    }
+    .product-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--wine);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .product-card:hover { background: var(--linen-light); transform: translateY(-2px); }
+    .product-card:hover::before { transform: scaleX(1); }
+    .product-card--soon { opacity: 0.7; cursor: default; }
+    .product-card--soon:hover { background: var(--ivory); transform: none; }
+    .product-card--soon:hover::before { transform: scaleX(0); }
+
+    /* Card image — portrait orientation to mimic a real card */
+    .product-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--linen);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .product-card:hover .product-img img { transform: scale(1.03); }
+
+    .product-img-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      height: 100%;
+    }
+    .product-img-placeholder span {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+    }
+    .badge-new { background: var(--wine); color: var(--white); }
+    .badge-soon { background: var(--taupe); color: var(--white); }
+    .badge-bestseller { background: var(--wine-dark); color: var(--linen-light); }
+
+    .product-info {
+      padding: 1.25rem 1.5rem 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-category {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--wine);
+      margin-bottom: 0.4rem;
+    }
+    .product-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--wine-dark);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .product-desc {
+      font-size: 12px;
+      color: var(--taupe-light);
+      line-height: 1.8;
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+    .product-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .product-detail-tag {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--taupe-light);
+      background: var(--linen-light);
+      padding: 3px 8px;
+    }
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--linen-light);
+      padding-top: 1rem;
+      margin-top: auto;
+    }
+    .product-price {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--wine);
+    }
+    .product-cta {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--wine);
+      transition: letter-spacing 0.2s;
+    }
+    .product-card:hover .product-cta { letter-spacing: 0.18em; }
+
+    /* How it works section */
+    .how-section {
+      background: var(--wine-dark);
+      padding: 5rem 2.5rem;
+    }
+    .how-inner { max-width: var(--max-w); margin: 0 auto; }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    .how-step-num {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--wine-light);
+      opacity: 0.5;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .how-step-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--linen-light);
+      margin-bottom: 0.6rem;
+    }
+    .how-step-body {
+      font-size: 12px;
+      color: var(--linen);
+      opacity: 0.75;
+      line-height: 1.9;
+    }
+
+    @media (max-width: 700px) {
+      .products-grid { grid-template-columns: 1fr 1fr; }
+      .how-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 440px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">AXSOAL</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ugc.html">UGC</a></li>
+      <li><a href="strategy.html">Strategy</a></li>
+      <li><a href="interior.html">Interior Design</a></li>
+      <li><a href="digital-products.html" class="active">Digital Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="menu">☰</button>
+  </nav>
+
+  <div class="page-header fade-up">
+    <div class="page-eyebrow">Digital Products</div>
+    <h1 class="page-title">Card <em>Designs.</em></h1>
+    <p class="page-desc">Beautifully designed digital cards — birthday, celebration, and everyday moments worth marking. Instant download, print at home or at your local shop.</p>
+  </div>
+
+  <!-- Etsy shop banner -->
+  <div class="etsy-banner">
+    <div class="etsy-banner-inner">
+      <div class="etsy-icon">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="50" fill="#F1641E"/>
+          <text x="50" y="68" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="bold" fill="white">e</text>
+        </svg>
+      </div>
+      <h2>Available on Etsy</h2>
+      <p>All card designs are available as instant digital downloads. Purchase, download, and print — it's that simple. Fully print-ready files included with every order.</p>
+      <!-- Replace YOUR-ETSY-SHOP with your actual Etsy shop name/URL -->
+      <a href="https://www.etsy.com/shop/YOUR-ETSY-SHOP" target="_blank" class="btn-primary">Shop on Etsy →</a>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <section class="products-section">
+
+    <div class="products-filter">
+      <button class="filter-btn active" onclick="filterProducts('all', this)">All Cards</button>
+      <button class="filter-btn" onclick="filterProducts('birthday', this)">Birthday</button>
+      <button class="filter-btn" onclick="filterProducts('celebration', this)">Celebration</button>
+      <button class="filter-btn" onclick="filterProducts('everyday', this)">Everyday</button>
+    </div>
+
+    <div class="products-grid" id="productsGrid">
+
+      <!--
+        HOW TO ADD A CARD DESIGN:
+        1. Copy a product-card block
+        2. Replace [Card Name], description, and price
+        3. Set data-category: birthday / celebration / everyday
+        4. Replace the Etsy href with your listing URL
+        5. Add your card preview image: <img src="images/card-1.jpg" alt="Card name">
+        6. Remove the badge or change it: badge-new / badge-bestseller / badge-soon
+      -->
+
+      <!-- Card 1 -->
+      <a class="product-card" href="https://www.etsy.com/shop/YOUR-ETSY-SHOP" target="_blank" data-category="birthday">
+        <div class="product-img" style="background:#c4b0a8;">
+          <!-- <img src="images/card-birthday-1.jpg" alt="Birthday Card Design"> -->
+          <div class="product-img-placeholder"><span>Upload card preview</span></div>
+          <div class="product-badge badge-new">New</div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Birthday Card</div>
+          <div class="product-title">[Card Name Here]</div>
+          <div class="product-desc">Describe the design — the vibe, who it's perfect for, and what makes it special.</div>
+          <div class="product-details">
+            <span class="product-detail-tag">5×7 in</span>
+            <span class="product-detail-tag">Print-ready PDF</span>
+            <span class="product-detail-tag">Instant download</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">$[price]</div>
+            <div class="product-cta">Shop on Etsy →</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a class="product-card" href="https://www.etsy.com/shop/YOUR-ETSY-SHOP" target="_blank" data-category="birthday">
+        <div class="product-img" style="background:#b5a898;">
+          <div class="product-img-placeholder"><span>Upload card preview</span></div>
+          <div class="product-badge badge-bestseller">Best Seller</div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Birthday Card</div>
+          <div class="product-title">[Card Name Here]</div>
+          <div class="product-desc">Describe the design — the vibe, who it's perfect for, and what makes it special.</div>
+          <div class="product-details">
+            <span class="product-detail-tag">5×7 in</span>
+            <span class="product-detail-tag">Print-ready PDF</span>
+            <span class="product-detail-tag">Instant download</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">$[price]</div>
+            <div class="product-cta">Shop on Etsy →</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a class="product-card" href="https://www.etsy.com/shop/YOUR-ETSY-SHOP" target="_blank" data-category="celebration">
+        <div class="product-img" style="background:#a89080;">
+          <div class="product-img-placeholder"><span>Upload card preview</span></div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Celebration Card</div>
+          <div class="product-title">[Card Name Here]</div>
+          <div class="product-desc">Describe the design — the vibe, who it's perfect for, and what makes it special.</div>
+          <div class="product-details">
+            <span class="product-detail-tag">5×7 in</span>
+            <span class="product-detail-tag">Print-ready PDF</span>
+            <span class="product-detail-tag">Instant download</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">$[price]</div>
+            <div class="product-cta">Shop on Etsy →</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a class="product-card" href="https://www.etsy.com/shop/YOUR-ETSY-SHOP" target="_blank" data-category="everyday">
+        <div class="product-img" style="background:#9e9080;">
+          <div class="product-img-placeholder"><span>Upload card preview</span></div>
+          <div class="product-badge badge-new">New</div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Everyday Card</div>
+          <div class="product-title">[Card Name Here]</div>
+          <div class="product-desc">Describe the design — the vibe, who it's perfect for, and what makes it special.</div>
+          <div class="product-details">
+            <span class="product-detail-tag">5×7 in</span>
+            <span class="product-detail-tag">Print-ready PDF</span>
+            <span class="product-detail-tag">Instant download</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">$[price]</div>
+            <div class="product-cta">Shop on Etsy →</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 5 -->
+      <a class="product-card" href="https://www.etsy.com/shop/YOUR-ETSY-SHOP" target="_blank" data-category="birthday">
+        <div class="product-img" style="background:#c8bbab;">
+          <div class="product-img-placeholder"><span>Upload card preview</span></div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Birthday Card</div>
+          <div class="product-title">[Card Name Here]</div>
+          <div class="product-desc">Describe the design — the vibe, who it's perfect for, and what makes it special.</div>
+          <div class="product-details">
+            <span class="product-detail-tag">5×7 in</span>
+            <span class="product-detail-tag">Print-ready PDF</span>
+            <span class="product-detail-tag">Instant download</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">$[price]</div>
+            <div class="product-cta">Shop on Etsy →</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 6 — Coming Soon -->
+      <div class="product-card product-card--soon" data-category="celebration">
+        <div class="product-img" style="background:#b8ac9c;">
+          <div class="product-img-placeholder"><span>Coming soon</span></div>
+          <div class="product-badge badge-soon">Coming Soon</div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Celebration Card</div>
+          <div class="product-title">[Card Name Here]</div>
+          <div class="product-desc">This design is almost ready. Check back soon or visit the Etsy shop to be notified when it drops.</div>
+          <div class="product-footer">
+            <div class="product-price">Coming Soon</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how-section">
+    <div class="how-inner">
+      <div class="page-eyebrow" style="color:var(--linen);">How It Works</div>
+      <div class="how-grid">
+        <div>
+          <div class="how-step-num">01</div>
+          <div class="how-step-title">Purchase on Etsy</div>
+          <div class="how-step-body">Browse the shop, pick your design, and complete checkout on Etsy. Secure, simple, and takes less than a minute.</div>
+        </div>
+        <div>
+          <div class="how-step-num">02</div>
+          <div class="how-step-title">Instant Download</div>
+          <div class="how-step-body">Your print-ready PDF file downloads immediately after purchase — no waiting, no shipping, no fuss.</div>
+        </div>
+        <div>
+          <div class="how-step-num">03</div>
+          <div class="how-step-title">Print & Send</div>
+          <div class="how-step-body">Print at home or upload to a local print shop like Walgreens, CVS, or Staples. Standard 5×7 sizing fits any card envelope.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <p class="cta-band-text">Want a custom card design?</p>
+    <a href="contact.html" class="btn-primary" style="background:var(--linen-light);color:var(--wine-dark);">Send a Request</a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">AXSOAL</span>
+      <div class="footer-links">
+        <a href="ugc.html">UGC</a>
+        <a href="strategy.html">Strategy</a>
+        <a href="interior.html">Interior Design</a>
+        <a href="digital-products.html">Digital Products</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <span class="footer-copy">© 2026 AXSOAL. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    function filterProducts(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('#productsGrid > *').forEach(card => {
+        const cat = card.getAttribute('data-category');
+        card.style.display = (category === 'all' || cat === category) ? 'flex' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

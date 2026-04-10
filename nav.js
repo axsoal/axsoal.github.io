@@ -7,6 +7,7 @@ mobileMenu.className = 'nav-mobile-menu';
   ['ugc.html','UGC'],
   ['strategy.html','Strategy'],
   ['interior.html','Interior Design'],
+  ['digital-products.html','Digital Products'],
   ['contact.html','Contact']
 ].forEach(([href, text]) => {
   const a = document.createElement('a');
