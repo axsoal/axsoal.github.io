@@ -71,6 +71,51 @@
     @media (max-width: 500px) {
       .kpi-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* Instagram balanced layout */
+    .ig-balanced {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .ig-photo-col .graph-card { height: 100%; }
+    .ig-text-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .ig-stat-block {
+      padding: 1.75rem 2rem;
+      border-left: 3px solid var(--linen);
+      margin-bottom: 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .ig-stat-block:last-child { margin-bottom: 0; }
+    .ig-stat-block:hover { border-left-color: var(--wine); }
+    .ig-stat-num {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--wine);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .ig-stat-lbl {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      margin-bottom: 0.6rem;
+    }
+    .ig-stat-desc {
+      font-size: 12px;
+      color: var(--taupe-light);
+      line-height: 1.8;
+    }
+    @media (max-width: 700px) {
+      .ig-balanced { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -116,52 +161,41 @@
         <span class="kpi-value">781K</span>
         <span class="kpi-label">Video Views</span>
         <span class="kpi-change">+180,316 · +30%</span>
-        <span class="kpi-period">60-day period</span>
+        <span class="kpi-period">Feb 8 – Apr 8</span>
       </div>
       <div class="kpi-card">
         <span class="kpi-value">47K</span>
         <span class="kpi-label">Profile Views</span>
         <span class="kpi-change">+9,163 · +24.2%</span>
-        <span class="kpi-period">60-day period</span>
+        <span class="kpi-period">Feb 8 – Apr 8</span>
       </div>
       <div class="kpi-card">
         <span class="kpi-value">64K</span>
         <span class="kpi-label">Likes</span>
         <span class="kpi-change">+21,363 · +50.3%</span>
-        <span class="kpi-period">60-day period</span>
+        <span class="kpi-period">Feb 8 – Apr 8</span>
       </div>
       <div class="kpi-card">
         <span class="kpi-value">1.3K</span>
         <span class="kpi-label">Shares</span>
         <span class="kpi-change">+513 · +67.4%</span>
-        <span class="kpi-period">60-day period</span>
+        <span class="kpi-period">Feb 8 – Apr 8</span>
       </div>
     </div>
 
-    <!-- Last 30 day callout -->
     <div class="platform-insight">
-      <strong>Last 30 days (Mar 9 – Apr 7) —</strong> 781K total video views with likes up 50.3% and shares up 67.4% — content is being actively saved and shared beyond the existing audience. Profile views hit 47K (+24.2%), showing strong top-of-funnel discovery.
+      <strong>Feb 8 – Apr 8, 2026 —</strong> 781K total video views with likes up 50.3% and shares up 67.4% — content is being actively saved and shared well beyond the existing audience. Profile views hit 47K (+24.2%), showing strong top-of-funnel discovery.
     </div>
 
-    <div class="platform-graphs">
+    <div class="platform-graphs" style="grid-template-columns: 1fr;">
       <div class="graph-card">
         <div class="graph-img">
-          <img src="images/tiktok-analytics.png" alt="TikTok 60-day analytics: video views, profile views, likes, comments and shares">
+          <img src="images/tiktok-analytics.png" alt="TikTok analytics Feb 8 – Apr 8: video views, profile views, likes, comments and shares">
         </div>
         <div class="graph-info">
-          <div class="graph-label">60-Day Overview</div>
+          <div class="graph-label">60-Day Overview · Feb 8 – Apr 8, 2026</div>
           <div class="graph-title">Video views, likes, comments & shares</div>
-          <div class="graph-note">Feb 8 – Apr 8, 2026 · TikTok Studio Analytics</div>
-        </div>
-      </div>
-      <div class="graph-card">
-        <div class="graph-img">
-          <img src="images/tiktok-analytics.png" alt="TikTok video views trend Feb 8 – Apr 8, 2026">
-        </div>
-        <div class="graph-info">
-          <div class="graph-label">60-Day Trend</div>
-          <div class="graph-title">Daily video view trend — Feb 8 to Apr 8</div>
-          <div class="graph-note">Feb 8 – Apr 8, 2026 · TikTok Studio</div>
+          <div class="graph-note">@anniexyaps · TikTok Studio Analytics</div>
         </div>
       </div>
     </div>
@@ -211,15 +245,34 @@
       <strong>Standout growth —</strong> 284,139 views with 190,037 accounts reached — a +7,245.8% increase in reach. 95.8% of views came from non-followers, showing strong organic discovery and content that reaches well beyond the existing audience.
     </div>
 
-    <div class="platform-graphs" style="grid-template-columns: 1fr;">
-      <div class="graph-card" style="max-width: 420px;">
-        <div class="graph-img">
-          <img src="images/ig-analytics.jpg" alt="Instagram views: 284,139 views, 190,037 accounts reached, Mar 10 – Apr 8">
+    <div class="ig-balanced">
+      <div class="ig-photo-col">
+        <div class="graph-card">
+          <div class="graph-img">
+            <img src="images/ig-analytics.jpg" alt="Instagram views: 284,139 views, 190,037 accounts reached, Mar 10 – Apr 8">
+          </div>
+          <div class="graph-info">
+            <div class="graph-label">Views · Mar 10 – Apr 8</div>
+            <div class="graph-title">284,139 views · 190,037 accounts reached</div>
+            <div class="graph-note">@axsoal · Instagram Insights</div>
+          </div>
         </div>
-        <div class="graph-info">
-          <div class="graph-label">Views · Mar 10 – Apr 8</div>
-          <div class="graph-title">Views, interactions & content performance</div>
-          <div class="graph-note">@axsoal · Instagram Insights</div>
+      </div>
+      <div class="ig-text-col">
+        <div class="ig-stat-block">
+          <div class="ig-stat-num">95.8%</div>
+          <div class="ig-stat-lbl">Views from non-followers</div>
+          <div class="ig-stat-desc">Content is reaching well beyond the existing audience — strong organic discovery.</div>
+        </div>
+        <div class="ig-stat-block">
+          <div class="ig-stat-num">+7,245%</div>
+          <div class="ig-stat-lbl">Growth in accounts reached</div>
+          <div class="ig-stat-desc">A dramatic increase in reach over the 30-day period, driven by high-performing reel content.</div>
+        </div>
+        <div class="ig-stat-block">
+          <div class="ig-stat-num">614%</div>
+          <div class="ig-stat-lbl">Top reel outperformance</div>
+          <div class="ig-stat-desc">One reel received 614% more plays than any of the previous 5 reels — a standout breakout moment.</div>
         </div>
       </div>
     </div>
