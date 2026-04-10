@@ -122,6 +122,55 @@
     .album-thumb-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
     .album-thumb-placeholder span { font-size: 8px; color: rgba(209,199,189,0.4); }
 
+
+    /* Landing two-column layout with photo */
+    .interior-landing-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 5rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .interior-landing-text .page-title { font-size: clamp(2.5rem, 5vw, 5rem); }
+    .interior-landing-photo { position: relative; }
+    .int-photo-wrap { position: relative; }
+    .int-photo-wrap img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+    .int-photo-badge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(74, 1, 18, 0.88);
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .int-photo-badge-title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--linen-light);
+      letter-spacing: 0.02em;
+    }
+    .int-photo-badge-sub {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--linen);
+      opacity: 0.8;
+    }
+    @media (max-width: 900px) {
+      .interior-landing-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .int-photo-wrap img { aspect-ratio: 4/3; }
+    }
     @media (max-width: 700px) {
       .interior-options { grid-template-columns: 1fr; }
       .projects-grid { grid-template-columns: 1fr; }
@@ -147,9 +196,22 @@
   <!-- LANDING -->
   <div id="landingView">
     <div class="interior-landing fade-up">
-      <div class="page-eyebrow">Interior Design</div>
-      <h1 class="page-title">Design rooted<br>in <em>intention.</em></h1>
-      <p class="page-desc">With a Bachelor's degree in Interior Architecture and Design, three years of experience at a commercial firm, and recognition as an Interior Design 30 Under 30 nominee in Austin, Texas, my approach goes beyond aesthetics. My goal is to design spaces that support intentional living — environments that align with your energy, elevate your well-being, and reflect who you're becoming, not just where you are.</p>
+      <div class="interior-landing-grid">
+        <div class="interior-landing-text">
+          <div class="page-eyebrow">Interior Design</div>
+          <h1 class="page-title">Design rooted<br>in <em>intention.</em></h1>
+          <p class="page-desc">With a Bachelor's degree in Interior Architecture and Design, three years of experience at a commercial firm, and recognition as an Interior Design 30 Under 30 nominee in Austin, Texas, my approach goes beyond aesthetics. My goal is to design spaces that support intentional living — environments that align with your energy, elevate your well-being, and reflect who you're becoming, not just where you are.</p>
+        </div>
+        <div class="interior-landing-photo">
+          <div class="int-photo-wrap">
+            <img src="images/30under30.jpg" alt="Annie at Interior Design 30 Under 30 — Austin, Texas">
+            <div class="int-photo-badge">
+              <span class="int-photo-badge-title">30 Under 30</span>
+              <span class="int-photo-badge-sub">Interior Design Magazine · Austin, TX</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="interior-options">
         <a class="interior-option" onclick="showPortfolio(); return false;" href="#">
