@@ -275,93 +275,7 @@
 
     <section class="projects-section">
       <div class="projects-grid" id="projectsGrid">
-
-        <!-- Project 1 -->
-        <div class="project-thumb" onclick="openAlbum(0)">
-          <div class="project-thumb-img" style="background:#c4b0a8;">
-            <!-- Cover image: <img src="images/p1-cover.jpg" alt="Project 1"> -->
-            <div class="project-thumb-img-placeholder"><span>Project cover photo</span></div>
-            <div class="project-thumb-count">8 photos</div>
-          </div>
-          <div class="project-thumb-info">
-            <div class="project-thumb-tag">Commercial · [Project Type]</div>
-            <div class="project-thumb-title">[Project Title]</div>
-            <div class="project-thumb-loc">[City, State] · [Year]</div>
-            <div class="project-thumb-expand">
-              <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              View album
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-thumb" onclick="openAlbum(1)">
-          <div class="project-thumb-img" style="background:#b5a898;">
-            <div class="project-thumb-img-placeholder"><span>Project cover photo</span></div>
-            <div class="project-thumb-count">6 photos</div>
-          </div>
-          <div class="project-thumb-info">
-            <div class="project-thumb-tag">Commercial · [Project Type]</div>
-            <div class="project-thumb-title">[Project Title]</div>
-            <div class="project-thumb-loc">[City, State] · [Year]</div>
-            <div class="project-thumb-expand">
-              <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              View album
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-thumb" onclick="openAlbum(2)">
-          <div class="project-thumb-img" style="background:#a89080;">
-            <div class="project-thumb-img-placeholder"><span>Project cover photo</span></div>
-            <div class="project-thumb-count">10 photos</div>
-          </div>
-          <div class="project-thumb-info">
-            <div class="project-thumb-tag">Commercial · [Project Type]</div>
-            <div class="project-thumb-title">[Project Title]</div>
-            <div class="project-thumb-loc">[City, State] · [Year]</div>
-            <div class="project-thumb-expand">
-              <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              View album
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-thumb" onclick="openAlbum(3)">
-          <div class="project-thumb-img" style="background:#9e9080;">
-            <div class="project-thumb-img-placeholder"><span>Project cover photo</span></div>
-            <div class="project-thumb-count">7 photos</div>
-          </div>
-          <div class="project-thumb-info">
-            <div class="project-thumb-tag">Commercial · [Project Type]</div>
-            <div class="project-thumb-title">[Project Title]</div>
-            <div class="project-thumb-loc">[City, State] · [Year]</div>
-            <div class="project-thumb-expand">
-              <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              View album
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project-thumb" onclick="openAlbum(4)">
-          <div class="project-thumb-img" style="background:#c8bbab;">
-            <div class="project-thumb-img-placeholder"><span>Project cover photo</span></div>
-            <div class="project-thumb-count">5 photos</div>
-          </div>
-          <div class="project-thumb-info">
-            <div class="project-thumb-tag">Residential · [Project Type]</div>
-            <div class="project-thumb-title">[Project Title]</div>
-            <div class="project-thumb-loc">[City, State] · [Year]</div>
-            <div class="project-thumb-expand">
-              <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              View album
-            </div>
-          </div>
-        </div>
-
+        <!-- Rendered by JS below -->
       </div>
     </section>
 
@@ -375,6 +289,7 @@
     <div class="album-header">
       <div class="album-header-left">
         <div class="album-header-tag" id="albumTag"></div>
+            <div class="album-header-scope" id="albumScope" style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--linen);opacity:0.6;margin-top:2px;"></div>
         <div class="album-header-title" id="albumTitle"></div>
       </div>
       <button class="album-close" onclick="closeAlbum()">✕</button>
@@ -423,82 +338,124 @@
     // For images: add src paths like 'images/p1-01.jpg'
     // For each image you can add a caption in 'desc'
     // =============================================
-    const projects = [
+        const projects = [
       {
-        tag: 'Commercial · [Project Type]',
-        title: '[Project Title]',
-        location: '[City, State] · [Year]',
-        desc: 'Add your project description here — the brief, design concept, scope of work, and outcome.',
+        tag: 'Commercial · K-12',
+        title: 'Fort Bend High School',
+        location: 'Texas · 2025',
+        scope: 'New Construction',
+        desc: 'A comprehensive new construction project for Fort Bend ISD, encompassing the full interior design of a modern high school campus. Scope included the learning commons, auditorium, library, cafeteria, and main entrance — each space designed to inspire students and support a dynamic, 21st-century learning environment.',
         images: [
-          { src: null, caption: 'Add caption for photo 1' },
-          { src: null, caption: 'Add caption for photo 2' },
-          { src: null, caption: 'Add caption for photo 3' },
-          { src: null, caption: 'Add caption for photo 4' },
-          { src: null, caption: 'Add caption for photo 5' },
-          { src: null, caption: 'Add caption for photo 6' },
-          { src: null, caption: 'Add caption for photo 7' },
-          { src: null, caption: 'Add caption for photo 8' },
+          { src: 'images/portfolio/p1-fortbend/Learning_Stairs_Rendering.JPG', caption: 'Learning Stairs Rendering' },
+          { src: 'images/portfolio/p1-fortbend/Library_Rendering.JPG', caption: 'Library Rendering' },
+          { src: 'images/portfolio/p1-fortbend/Cafeteria_Rendering.JPG', caption: 'Cafeteria Rendering' },
+          { src: 'images/portfolio/p1-fortbend/Exterior_Rendering.JPG', caption: 'Exterior Rendering' },
+          { src: 'images/portfolio/p1-fortbend/Front_Entrance_Rendering.JPG', caption: 'Front Entrance Rendering' },
+          { src: 'images/portfolio/p1-fortbend/Auditorium_Rendering.JPG', caption: 'Auditorium Rendering' },
         ]
       },
       {
-        tag: 'Commercial · [Project Type]',
-        title: '[Project Title]',
-        location: '[City, State] · [Year]',
-        desc: 'Add your project description here.',
+        tag: 'Commercial · Sports',
+        title: 'North Wilkesboro Speedway',
+        location: 'North Carolina · 2023',
+        scope: 'New Construction',
+        desc: 'Interior design for the revival of the historic North Wilkesboro Speedway, host of the 2023 NASCAR All-Star Race. Scope included premium suites, rooftop terrace with canopy structure, and trackside lounge spaces — blending the venue’s storied racing heritage with elevated hospitality design.',
         images: [
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
+          { src: 'images/portfolio/p2-nwilkesboro/Exterior_1.JPEG', caption: 'Exterior' },
+          { src: 'images/portfolio/p2-nwilkesboro/Exterior_2.JPEG', caption: 'Exterior' },
+          { src: 'images/portfolio/p2-nwilkesboro/Lounge_1.JPEG', caption: 'Lounge' },
+          { src: 'images/portfolio/p2-nwilkesboro/Mood_Board.png', caption: 'Mood Board' },
+          { src: 'images/portfolio/p2-nwilkesboro/Race_Track_1.JPEG', caption: 'Race Track' },
+          { src: 'images/portfolio/p2-nwilkesboro/Race_Track_2.JPEG', caption: 'Race Track' },
+          { src: 'images/portfolio/p2-nwilkesboro/Race_Track_3.JPEG', caption: 'Race Track' },
+          { src: 'images/portfolio/p2-nwilkesboro/Race_Track_4.JPG', caption: 'Race Track' },
+          { src: 'images/portfolio/p2-nwilkesboro/Rendering-Exterior_Canopy_5.jpg', caption: 'Rendering - Exterior Canopy' },
+          { src: 'images/portfolio/p2-nwilkesboro/Rendering-Lounge_4.jpg', caption: 'Rendering - Lounge' },
+          { src: 'images/portfolio/p2-nwilkesboro/Rendering-Suite_1.jpg', caption: 'Rendering - Suite' },
+          { src: 'images/portfolio/p2-nwilkesboro/Rendering-Suite_2.jpg', caption: 'Rendering - Suite' },
+          { src: 'images/portfolio/p2-nwilkesboro/Rendering-Suite_3.jpg', caption: 'Rendering - Suite' },
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_1.JPEG', caption: 'Suite' },
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_2.JPEG', caption: 'Suite' },
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_3.JPEG', caption: 'Suite' },
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_4.JPEG', caption: 'Suite' },
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_5.JPEG', caption: 'Suite' },
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_6.JPEG', caption: 'Suite' },
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_7.JPEG', caption: 'Suite' },
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_8.JPEG', caption: 'Suite' },
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_9.JPEG', caption: 'Suite' },
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_10.JPEG', caption: 'Suite' },
         ]
       },
       {
-        tag: 'Commercial · [Project Type]',
-        title: '[Project Title]',
-        location: '[City, State] · [Year]',
-        desc: 'Add your project description here.',
+        tag: 'Commercial · Workplace',
+        title: 'Wise',
+        location: 'Texas · 2026',
+        scope: 'Expansion',
+        desc: 'Workplace expansion for Wise, designing a suite of new interior spaces that reflect the company’s culture and values. Scope included an open office environment, collaborative lounge areas, conference room, interfaith room, and custom branding wall — creating a cohesive, intentional workspace.',
         images: [
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
+          { src: 'images/portfolio/p3-wise/Branding_Wall_1.MOV', caption: 'Branding Wall', isVideo: true },
+          { src: 'images/portfolio/p3-wise/Conference_Room_1.MOV', caption: 'Conference Room', isVideo: true },
+          { src: 'images/portfolio/p3-wise/Inner_Faith_Room_1.MOV', caption: 'Inner Faith Room', isVideo: true },
+          { src: 'images/portfolio/p3-wise/Inner_Faith_Room_2.MOV', caption: 'Inner Faith Room', isVideo: true },
+          { src: 'images/portfolio/p3-wise/Lounge_1.MOV', caption: 'Lounge', isVideo: true },
+          { src: 'images/portfolio/p3-wise/Lounge_2.MOV', caption: 'Lounge', isVideo: true },
+          { src: 'images/portfolio/p3-wise/Open_Office_1.MOV', caption: 'Open Office', isVideo: true },
+          { src: 'images/portfolio/p3-wise/Open_Office_2.MOV', caption: 'Open Office', isVideo: true },
+          { src: 'images/portfolio/p3-wise/Open_Office_3.MOV', caption: 'Open Office', isVideo: true },
         ]
       },
       {
-        tag: 'Commercial · [Project Type]',
-        title: '[Project Title]',
-        location: '[City, State] · [Year]',
-        desc: 'Add your project description here.',
+        tag: 'Residential · Interior Decorating',
+        title: 'Christmas at LeAnn’s',
+        location: 'North Carolina · 2021',
+        scope: 'Interior Decorating',
+        desc: 'Full holiday interior decorating for a private residence in North Carolina. Scope encompassed living room, dining room, and bedroom spaces — styled with a cohesive white, silver, and gold Christmas palette featuring flocked trees, bespoke tablescapes, and curated decorative vignettes throughout.',
         images: [
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
+          { src: 'images/portfolio/p4-leanns/Bedroom_1.jpg', caption: 'Bedroom' },
+          { src: 'images/portfolio/p4-leanns/Bedroom_2.jpg', caption: 'Bedroom' },
+          { src: 'images/portfolio/p4-leanns/Dining_Room_1.jpg', caption: 'Dining Room' },
+          { src: 'images/portfolio/p4-leanns/Dining_Room_2.jpg', caption: 'Dining Room' },
+          { src: 'images/portfolio/p4-leanns/Dining_Room_3.jpg', caption: 'Dining Room' },
+          { src: 'images/portfolio/p4-leanns/Dining_Room_4.jpg', caption: 'Dining Room' },
+          { src: 'images/portfolio/p4-leanns/Dining_Room_5.jpg', caption: 'Dining Room' },
+          { src: 'images/portfolio/p4-leanns/Dining_Room_6.jpg', caption: 'Dining Room' },
+          { src: 'images/portfolio/p4-leanns/Dining_Room_7.jpg', caption: 'Dining Room' },
+          { src: 'images/portfolio/p4-leanns/Living_Room_1.jpg', caption: 'Living Room' },
+          { src: 'images/portfolio/p4-leanns/Living_Room_2.jpg', caption: 'Living Room' },
+          { src: 'images/portfolio/p4-leanns/Living_Room_3.jpg', caption: 'Living Room' },
+          { src: 'images/portfolio/p4-leanns/Living_Room_4.jpg', caption: 'Living Room' },
+          { src: 'images/portfolio/p4-leanns/Living_Room_5.jpg', caption: 'Living Room' },
+          { src: 'images/portfolio/p4-leanns/Living_Room_6.jpg', caption: 'Living Room' },
+          { src: 'images/portfolio/p4-leanns/Living_Room_7.jpg', caption: 'Living Room' },
+          { src: 'images/portfolio/p4-leanns/Living_Room_8.jpg', caption: 'Living Room' },
+          { src: 'images/portfolio/p4-leanns/Living_Room_9.jpg', caption: 'Living Room' },
+          { src: 'images/portfolio/p4-leanns/Living_Room_Christmas_Tree_1.jpg', caption: 'Living Room Christmas Tree' },
+          { src: 'images/portfolio/p4-leanns/Living_Room_Christmas_Tree_2.jpg', caption: 'Living Room Christmas Tree' },
         ]
       },
       {
-        tag: 'Residential · [Project Type]',
-        title: '[Project Title]',
-        location: '[City, State] · [Year]',
-        desc: 'Add your project description here.',
-        images: [
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-          { src: null, caption: 'Add caption' },
-        ]
+        tag: 'Placeholder · Folder 5',
+        title: 'Project 5',
+        location: 'State · Year',
+        scope: 'Scope of Work',
+        desc: 'Drop folder 5 to populate.',
+        images: []
+      },
+      {
+        tag: 'Placeholder · Folder 6',
+        title: 'Project 6',
+        location: 'State · Year',
+        scope: 'Scope of Work',
+        desc: 'Drop folder 6 to populate.',
+        images: []
+      },
+      {
+        tag: 'Placeholder · Folder 7',
+        title: 'Project 7',
+        location: 'State · Year',
+        scope: 'Scope of Work',
+        desc: 'Drop folder 7 to populate.',
+        images: []
       },
     ];
 
@@ -534,12 +491,55 @@
     pwInput.addEventListener('keydown', e => { if (e.key === 'Enter') checkPassword(); });
 
     // Album logic
+
+    // Render project grid cards from projects array
+    function renderProjectGrid() {
+      const bgColors = ['#c4b0a8','#b5a898','#a89080','#9e9080','#c8bbab','#b0a090','#a09080'];
+      const grid = document.getElementById('projectsGrid');
+      if (!grid) return;
+      grid.innerHTML = projects.map((p, idx) => {
+        const count = p.images.length;
+        const hasImages = count > 0;
+        const cover = p.images[0];
+        const coverHTML = cover && cover.src && !cover.isVideo
+          ? `<img src="${cover.src}" alt="${p.title}" style="width:100%;height:100%;object-fit:cover;display:block;">`
+          : `<div class="project-thumb-img-placeholder"><span>${p.title}</span></div>`;
+        const countLabel = hasImages ? `<div class="project-thumb-count">${count} ${count === 1 ? 'item' : 'items'}</div>` : '';
+        const clickable = hasImages ? `onclick="openAlbum(${idx})"` : '';
+        const opacity = hasImages ? '' : 'opacity:0.55;cursor:default;';
+        return `<div class="project-thumb" ${clickable} style="${opacity}background:${bgColors[idx] || '#b0a090'};">
+          <div class="project-thumb-img">
+            ${coverHTML}
+            ${countLabel}
+          </div>
+          <div class="project-thumb-info">
+            <div class="project-thumb-tag">${p.tag}</div>
+            <div class="project-thumb-title">${p.title}</div>
+            <div class="project-thumb-loc">${p.location}</div>
+            ${hasImages ? `<div class="project-thumb-expand">
+              <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              View album
+            </div>` : '<div class="project-thumb-expand" style="opacity:0.4;">Coming soon</div>'}
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    // Auto-render on portfolio view open
+    const _origShowPortfolio = showPortfolio;
+    function showPortfolio() {
+      _origShowPortfolio();
+      renderProjectGrid();
+    }
+
     function openAlbum(idx) {
       currentProject = idx;
       currentImg = 0;
       const p = projects[idx];
       document.getElementById('albumTag').textContent = p.tag;
       document.getElementById('albumTitle').textContent = p.title;
+      const scopeEl = document.getElementById('albumScope');
+      if (scopeEl) scopeEl.textContent = p.scope || '';
       renderAlbumImg();
       renderThumbs();
       document.getElementById('albumOverlay').classList.add('open');
@@ -553,24 +553,29 @@
 
     function renderAlbumImg() {
       const p = projects[currentProject];
-      const img = p.images[currentImg];
+      const item = p.images[currentImg];
       const wrap = document.getElementById('albumImgWrap');
       const total = p.images.length;
 
-      if (img.src) {
-        wrap.innerHTML = `<img src="${img.src}" alt="${p.title} photo ${currentImg + 1}">`;
+      if (item && item.src) {
+        if (item.isVideo) {
+          wrap.innerHTML = `<video src="${item.src}" controls playsinline style="max-width:100%;max-height:70vh;display:block;margin:0 auto;"></video>`;
+        } else {
+          wrap.innerHTML = `<img src="${item.src}" alt="${item.caption || p.title + ' photo ' + (currentImg + 1)}">`;
+        }
       } else {
         const num = currentImg + 1;
         wrap.innerHTML = `<div class="album-img-placeholder">
           <span>Photo ${num} of ${total}</span>
-          <small>Replace with: images/p${currentProject+1}-0${num}.jpg</small>
+          <small>Coming soon</small>
         </div>`;
       }
 
       document.getElementById('albumCounter').textContent = `${currentImg + 1} / ${total}`;
-      document.getElementById('albumDesc').textContent = img.caption || p.desc;
+      // Show caption below image; fall back to project desc on first image
+      const caption = item && item.caption ? item.caption : '';
+      document.getElementById('albumDesc').textContent = caption || (currentImg === 0 ? p.desc : '');
 
-      // Update thumb highlights
       document.querySelectorAll('.album-thumb').forEach((t, i) => {
         t.classList.toggle('active', i === currentImg);
       });
@@ -579,14 +584,20 @@
     function renderThumbs() {
       const p = projects[currentProject];
       const container = document.getElementById('albumThumbs');
-      container.innerHTML = p.images.map((img, i) => `
-        <div class="album-thumb ${i === 0 ? 'active' : ''}" onclick="goToImg(${i})">
-          ${img.src
-            ? `<img src="${img.src}" alt="thumb ${i+1}">`
-            : `<div class="album-thumb-placeholder"><span>${i+1}</span></div>`
-          }
-        </div>
-      `).join('');
+      container.innerHTML = p.images.map((item, i) => {
+        let inner = '';
+        if (!item.src) {
+          inner = `<div class="album-thumb-placeholder"><span>${i+1}</span></div>`;
+        } else if (item.isVideo) {
+          inner = `<div class="album-thumb-placeholder" style="background:var(--wine-dark);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="white"><path d="M4 2l10 6-10 6V2z"/></svg>
+            <span style="font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7)">${item.caption || 'Video'}</span>
+          </div>`;
+        } else {
+          inner = `<img src="${item.src}" alt="${item.caption || 'thumb ' + (i+1)}">`;
+        }
+        return `<div class="album-thumb ${i === 0 ? 'active' : ''}" onclick="goToImg(${i})">${inner}</div>`;
+      }).join('');
     }
 
     function goToImg(i) {
