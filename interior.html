@@ -523,8 +523,13 @@
     }
 
     function showPortfolio() {
-      if (sessionStorage.getItem('interior_unlocked') === 'true') { show('portfolioView'); }
-      else { show('gateView'); setTimeout(() => document.getElementById('passwordInput').focus(), 100); }
+      if (sessionStorage.getItem('interior_unlocked') === 'true') {
+        show('portfolioView');
+        renderProjectGrid();
+      } else {
+        show('gateView');
+        setTimeout(() => document.getElementById('passwordInput').focus(), 100);
+      }
     }
 
     function backToLanding() { show('landingView'); }
@@ -536,6 +541,7 @@
       if (pwInput.value === PORTFOLIO_PASSWORD) {
         sessionStorage.setItem('interior_unlocked', 'true');
         show('portfolioView');
+        renderProjectGrid();
       } else {
         pwError.textContent = 'Incorrect password. Please try again.';
         pwInput.value = ''; pwInput.focus();
@@ -577,13 +583,6 @@
           </div>
         </div>`;
       }).join('');
-    }
-
-    // Auto-render on portfolio view open
-    const _origShowPortfolio = showPortfolio;
-    function showPortfolio() {
-      _origShowPortfolio();
-      renderProjectGrid();
     }
 
     function openAlbum(idx) {
