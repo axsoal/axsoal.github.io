@@ -304,7 +304,10 @@
     <div class="album-thumbs" id="albumThumbs"></div>
 
     <div class="album-footer">
-      <div class="album-counter" id="albumCounter"></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+        <div class="album-counter" id="albumCounter"></div>
+        <button id="setCoverBtn" onclick="setCoverPhoto()" style="background:none;border:1px solid var(--linen);color:var(--linen);font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;cursor:pointer;opacity:0.7;transition:opacity 0.2s;">☆ Set as cover</button>
+      </div>
       <div class="album-desc" id="albumDesc"></div>
     </div>
   </div>
@@ -405,6 +408,29 @@
         ]
       },
       {
+        tag: 'Commercial · Workplace',
+        title: 'Partner RE',
+        location: 'North Carolina · 2023',
+        scope: 'New Construction',
+        desc: 'New construction interior design for Partner RE in North Carolina. Scope encompassed the full interior buildout of a modern professional workspace — including open office, conference rooms, huddle spaces, break room, and branded front entrance.',
+        images: [
+          { src: 'images/portfolio/p5-partnerre/Break_Room.PNG', caption: 'Break Room' },
+          { src: 'images/portfolio/p5-partnerre/Front_Entrance_Branding_1.PNG', caption: 'Front Entrance Branding' },
+          { src: 'images/portfolio/p5-partnerre/Front_Entrance_Branding_2.PNG', caption: 'Front Entrance Branding' },
+          { src: 'images/portfolio/p5-partnerre/Huddle.PNG', caption: 'Huddle' },
+          { src: 'images/portfolio/p5-partnerre/Large_Conference_1.PNG', caption: 'Large Conference' },
+          { src: 'images/portfolio/p5-partnerre/Large_Conference_2.PNG', caption: 'Large Conference' },
+          { src: 'images/portfolio/p5-partnerre/Large_Conference3.PNG', caption: 'Large Conference' },
+          { src: 'images/portfolio/p5-partnerre/Medium_Conference_1.PNG', caption: 'Medium Conference' },
+          { src: 'images/portfolio/p5-partnerre/Medium_Conference_2.PNG', caption: 'Medium Conference' },
+          { src: 'images/portfolio/p5-partnerre/Open_Huddle.PNG', caption: 'Open Huddle' },
+          { src: 'images/portfolio/p5-partnerre/Open_Office_1.PNG', caption: 'Open Office' },
+          { src: 'images/portfolio/p5-partnerre/Open_Office_2.PNG', caption: 'Open Office' },
+          { src: 'images/portfolio/p5-partnerre/Open_Office_3.PNG', caption: 'Open Office' },
+          { src: 'images/portfolio/p5-partnerre/Open_Office_4.PNG', caption: 'Open Office' },
+        ]
+      },
+      {
         tag: 'Residential · Interior Decorating',
         title: 'Christmas at LeAnn’s',
         location: 'North Carolina · 2021',
@@ -446,29 +472,6 @@
         ]
       },
       {
-        tag: 'Commercial · Workplace',
-        title: 'Partner RE',
-        location: 'North Carolina · 2023',
-        scope: 'New Construction',
-        desc: 'New construction interior design for Partner RE in North Carolina. Scope encompassed the full interior buildout of a modern professional workspace — including open office, conference rooms, huddle spaces, break room, and branded front entrance.',
-        images: [
-          { src: 'images/portfolio/p5-partnerre/Break_Room.PNG', caption: 'Break Room' },
-          { src: 'images/portfolio/p5-partnerre/Front_Entrance_Branding_1.PNG', caption: 'Front Entrance Branding' },
-          { src: 'images/portfolio/p5-partnerre/Front_Entrance_Branding_2.PNG', caption: 'Front Entrance Branding' },
-          { src: 'images/portfolio/p5-partnerre/Huddle.PNG', caption: 'Huddle' },
-          { src: 'images/portfolio/p5-partnerre/Large_Conference_1.PNG', caption: 'Large Conference' },
-          { src: 'images/portfolio/p5-partnerre/Large_Conference_2.PNG', caption: 'Large Conference' },
-          { src: 'images/portfolio/p5-partnerre/Large_Conference3.PNG', caption: 'Large Conference' },
-          { src: 'images/portfolio/p5-partnerre/Medium_Conference_1.PNG', caption: 'Medium Conference' },
-          { src: 'images/portfolio/p5-partnerre/Medium_Conference_2.PNG', caption: 'Medium Conference' },
-          { src: 'images/portfolio/p5-partnerre/Open_Huddle.PNG', caption: 'Open Huddle' },
-          { src: 'images/portfolio/p5-partnerre/Open_Office_1.PNG', caption: 'Open Office' },
-          { src: 'images/portfolio/p5-partnerre/Open_Office_2.PNG', caption: 'Open Office' },
-          { src: 'images/portfolio/p5-partnerre/Open_Office_3.PNG', caption: 'Open Office' },
-          { src: 'images/portfolio/p5-partnerre/Open_Office_4.PNG', caption: 'Open Office' },
-        ]
-      },
-      {
         tag: 'Residential · Staging',
         title: 'Glenmiro',
         location: 'North Carolina · 2021',
@@ -497,18 +500,18 @@
         scope: 'Staging',
         desc: 'Full residential staging for Peninsula, a private residence in North Carolina. Thoughtful kitchen styling and curation across 12 views to present the home at its highest potential.',
         images: [
-          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_1.JPG', caption: 'Kitchen Staging' },
-          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_2.JPG', caption: 'Kitchen Staging' },
-          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_3.JPG', caption: 'Kitchen Staging' },
-          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_4.JPG', caption: 'Kitchen Staging' },
-          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_5.JPG', caption: 'Kitchen Staging' },
-          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_6.JPG', caption: 'Kitchen Staging' },
-          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_7.JPG', caption: 'Kitchen Staging' },
-          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_8.JPG', caption: 'Kitchen Staging' },
-          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_9.JPG', caption: 'Kitchen Staging' },
-          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_10.JPG', caption: 'Kitchen Staging' },
-          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_11.JPG', caption: 'Kitchen Staging' },
-          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_12.JPG', caption: 'Kitchen Staging' },
+          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_1.jpg', caption: 'Kitchen Staging' },
+          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_2.jpg', caption: 'Kitchen Staging' },
+          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_3.jpg', caption: 'Kitchen Staging' },
+          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_4.jpg', caption: 'Kitchen Staging' },
+          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_5.jpg', caption: 'Kitchen Staging' },
+          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_6.jpg', caption: 'Kitchen Staging' },
+          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_7.jpg', caption: 'Kitchen Staging' },
+          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_8.jpg', caption: 'Kitchen Staging' },
+          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_9.jpg', caption: 'Kitchen Staging' },
+          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_10.jpg', caption: 'Kitchen Staging' },
+          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_11.jpg', caption: 'Kitchen Staging' },
+          { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_12.jpg', caption: 'Kitchen Staging' },
         ]
       },
     ];
@@ -560,7 +563,8 @@
       grid.innerHTML = projects.map((p, idx) => {
         const count = p.images.length;
         const hasImages = count > 0;
-        const cover = p.images[0];
+        const coverIdx = p.coverIndex || 0;
+        const cover = p.images[coverIdx] || p.images[0];
         const coverHTML = cover && cover.src && !cover.isVideo
           ? `<img src="${cover.src}" alt="${p.title}" style="width:100%;height:100%;object-fit:cover;display:block;">`
           : `<div class="project-thumb-img-placeholder"><span>${p.title}</span></div>`;
@@ -625,6 +629,13 @@
       }
 
       document.getElementById('albumCounter').textContent = `${currentImg + 1} / ${total}`;
+      // Update set-cover button state
+      const setCoverBtn = document.getElementById('setCoverBtn');
+      if (setCoverBtn) {
+        const isCover = currentImg === (projects[currentProject].coverIndex || 0);
+        setCoverBtn.textContent = isCover ? '★ Cover photo' : '☆ Set as cover';
+        setCoverBtn.style.opacity = isCover ? '1' : '0.6';
+      }
       // Show caption below image; fall back to project desc on first image
       const caption = item && item.caption ? item.caption : '';
       document.getElementById('albumDesc').textContent = caption || (currentImg === 0 ? p.desc : '');
@@ -642,15 +653,31 @@
         if (!item.src) {
           inner = `<div class="album-thumb-placeholder"><span>${i+1}</span></div>`;
         } else if (item.isVideo) {
-          inner = `<div class="album-thumb-placeholder" style="background:var(--wine-dark);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;">
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="white"><path d="M4 2l10 6-10 6V2z"/></svg>
-            <span style="font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7)">${item.caption || 'Video'}</span>
+          inner = `<div class="album-thumb-placeholder" style="background:var(--wine-dark);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;padding:4px;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="opacity:0.8"><path d="M4 2l10 6-10 6V2z"/></svg>
+            <span style="font-size:7px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-align:center;line-height:1.2">${item.caption || 'Video'}</span>
           </div>`;
         } else {
           inner = `<img src="${item.src}" alt="${item.caption || 'thumb ' + (i+1)}">`;
         }
         return `<div class="album-thumb ${i === 0 ? 'active' : ''}" onclick="goToImg(${i})">${inner}</div>`;
       }).join('');
+    }
+
+    function setCoverPhoto() {
+      projects[currentProject].coverIndex = currentImg;
+      renderProjectGrid();
+      // Update button immediately
+      const setCoverBtn = document.getElementById('setCoverBtn');
+      if (setCoverBtn) {
+        setCoverBtn.textContent = '★ Cover photo';
+        setCoverBtn.style.opacity = '1';
+      }
+      // Update all thumbs to show cover star
+      document.querySelectorAll('.album-thumb').forEach((t, i) => {
+        const star = t.querySelector('.cover-star');
+        if (star) star.style.display = i === currentImg ? 'block' : 'none';
+      });
     }
 
     function goToImg(i) {
