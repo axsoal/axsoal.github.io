@@ -304,10 +304,7 @@
     <div class="album-thumbs" id="albumThumbs"></div>
 
     <div class="album-footer">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-        <div class="album-counter" id="albumCounter"></div>
-        <button id="setCoverBtn" onclick="setCoverPhoto()" style="background:none;border:1px solid var(--linen);color:var(--linen);font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;cursor:pointer;opacity:0.7;transition:opacity 0.2s;">☆ Set as cover</button>
-      </div>
+      <div class="album-counter" id="albumCounter"></div>
       <div class="album-desc" id="albumDesc"></div>
     </div>
   </div>
@@ -347,6 +344,7 @@
         title: 'Fort Bend High School',
         location: 'Texas · 2025',
         scope: 'New Construction',
+        coverIndex: 1,
         desc: 'A comprehensive new construction project for Fort Bend ISD, encompassing the full interior design of a modern high school campus. Scope included the learning commons, auditorium, library, cafeteria, and main entrance — each space designed to inspire students and support a dynamic, 21st-century learning environment.',
         images: [
           { src: 'images/portfolio/p1-fortbend/Learning_Stairs_Rendering.JPG', caption: 'Learning Stairs Rendering' },
@@ -362,31 +360,32 @@
         title: 'North Wilkesboro Speedway',
         location: 'North Carolina · 2023',
         scope: 'New Construction',
+        coverIndex: 16,
         desc: 'Interior design for the revival of the historic North Wilkesboro Speedway, host of the 2023 NASCAR All-Star Race. Scope included premium suites, rooftop terrace with canopy structure, and trackside lounge spaces — blending the venue’s storied racing heritage with elevated hospitality design.',
         images: [
-          { src: 'images/portfolio/p2-nwilkesboro/Exterior_1.JPEG', caption: 'Exterior' },
-          { src: 'images/portfolio/p2-nwilkesboro/Exterior_2.JPEG', caption: 'Exterior' },
-          { src: 'images/portfolio/p2-nwilkesboro/Lounge_1.JPEG', caption: 'Lounge' },
-          { src: 'images/portfolio/p2-nwilkesboro/Mood_Board.png', caption: 'Mood Board' },
-          { src: 'images/portfolio/p2-nwilkesboro/Race_Track_1.JPEG', caption: 'Race Track' },
-          { src: 'images/portfolio/p2-nwilkesboro/Race_Track_2.JPEG', caption: 'Race Track' },
-          { src: 'images/portfolio/p2-nwilkesboro/Race_Track_3.JPEG', caption: 'Race Track' },
-          { src: 'images/portfolio/p2-nwilkesboro/Race_Track_4.JPG', caption: 'Race Track' },
-          { src: 'images/portfolio/p2-nwilkesboro/Rendering-Exterior_Canopy_5.jpg', caption: 'Rendering - Exterior Canopy' },
-          { src: 'images/portfolio/p2-nwilkesboro/Rendering-Lounge_4.jpg', caption: 'Rendering - Lounge' },
-          { src: 'images/portfolio/p2-nwilkesboro/Rendering-Suite_1.jpg', caption: 'Rendering - Suite' },
-          { src: 'images/portfolio/p2-nwilkesboro/Rendering-Suite_2.jpg', caption: 'Rendering - Suite' },
+          { src: 'images/portfolio/p2-nwilkesboro/Mood_Board.png', caption: 'Mood Board' }
+          { src: 'images/portfolio/p2-nwilkesboro/Exterior_1.JPEG', caption: 'Exterior' }
+          { src: 'images/portfolio/p2-nwilkesboro/Exterior_2.JPEG', caption: 'Exterior' }
+          { src: 'images/portfolio/p2-nwilkesboro/Lounge_1.JPEG', caption: 'Lounge' }
+          { src: 'images/portfolio/p2-nwilkesboro/Race_Track_1.JPEG', caption: 'Race Track' }
+          { src: 'images/portfolio/p2-nwilkesboro/Race_Track_2.JPEG', caption: 'Race Track' }
+          { src: 'images/portfolio/p2-nwilkesboro/Race_Track_3.JPEG', caption: 'Race Track' }
+          { src: 'images/portfolio/p2-nwilkesboro/Race_Track_4.JPG', caption: 'Race Track' }
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_1.JPEG', caption: 'Suite' }
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_2.JPEG', caption: 'Suite' }
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_3.JPEG', caption: 'Suite' }
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_4.JPEG', caption: 'Suite' }
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_5.JPEG', caption: 'Suite' }
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_6.JPEG', caption: 'Suite' }
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_7.JPEG', caption: 'Suite' }
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_8.JPEG', caption: 'Suite' }
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_9.JPEG', caption: 'Suite' }
+          { src: 'images/portfolio/p2-nwilkesboro/Suite_10.JPEG', caption: 'Suite' }
+          { src: 'images/portfolio/p2-nwilkesboro/Rendering-Exterior_Canopy_5.jpg', caption: 'Rendering - Exterior Canopy' }
+          { src: 'images/portfolio/p2-nwilkesboro/Rendering-Lounge_4.jpg', caption: 'Rendering - Lounge' }
+          { src: 'images/portfolio/p2-nwilkesboro/Rendering-Suite_1.jpg', caption: 'Rendering - Suite' }
+          { src: 'images/portfolio/p2-nwilkesboro/Rendering-Suite_2.jpg', caption: 'Rendering - Suite' }
           { src: 'images/portfolio/p2-nwilkesboro/Rendering-Suite_3.jpg', caption: 'Rendering - Suite' },
-          { src: 'images/portfolio/p2-nwilkesboro/Suite_1.JPEG', caption: 'Suite' },
-          { src: 'images/portfolio/p2-nwilkesboro/Suite_2.JPEG', caption: 'Suite' },
-          { src: 'images/portfolio/p2-nwilkesboro/Suite_3.JPEG', caption: 'Suite' },
-          { src: 'images/portfolio/p2-nwilkesboro/Suite_4.JPEG', caption: 'Suite' },
-          { src: 'images/portfolio/p2-nwilkesboro/Suite_5.JPEG', caption: 'Suite' },
-          { src: 'images/portfolio/p2-nwilkesboro/Suite_6.JPEG', caption: 'Suite' },
-          { src: 'images/portfolio/p2-nwilkesboro/Suite_7.JPEG', caption: 'Suite' },
-          { src: 'images/portfolio/p2-nwilkesboro/Suite_8.JPEG', caption: 'Suite' },
-          { src: 'images/portfolio/p2-nwilkesboro/Suite_9.JPEG', caption: 'Suite' },
-          { src: 'images/portfolio/p2-nwilkesboro/Suite_10.JPEG', caption: 'Suite' },
         ]
       },
       {
@@ -394,6 +393,7 @@
         title: 'Wise',
         location: 'Texas · 2026',
         scope: 'Expansion',
+        coverIndex: 0,
         desc: 'Workplace expansion for Wise, designing a suite of new interior spaces that reflect the company’s culture and values. Scope included an open office environment, collaborative lounge areas, conference room, interfaith room, and custom branding wall — creating a cohesive, intentional workspace.',
         images: [
           { src: 'images/portfolio/p3-wise/Branding_Wall_1.MOV', caption: 'Branding Wall', isVideo: true },
@@ -412,6 +412,7 @@
         title: 'Partner RE',
         location: 'North Carolina · 2023',
         scope: 'New Construction',
+        coverIndex: 5,
         desc: 'New construction interior design for Partner RE in North Carolina. Scope encompassed the full interior buildout of a modern professional workspace — including open office, conference rooms, huddle spaces, break room, and branded front entrance.',
         images: [
           { src: 'images/portfolio/p5-partnerre/Break_Room.PNG', caption: 'Break Room' },
@@ -435,6 +436,7 @@
         title: 'Christmas at LeAnn’s',
         location: 'North Carolina · 2021',
         scope: 'Interior Decorating',
+        coverIndex: 9,
         desc: 'Full holiday interior decorating for a private residence in North Carolina. Scope encompassed living room, dining room, and bedroom spaces — styled with a cohesive white, silver, and gold Christmas palette featuring flocked trees, bespoke tablescapes, and curated decorative vignettes throughout.',
         images: [
           { src: 'images/portfolio/p4-leanns/Bedroom_1.jpg', caption: 'Bedroom' },
@@ -476,6 +478,7 @@
         title: 'Glenmiro',
         location: 'North Carolina · 2021',
         scope: 'Staging',
+        coverIndex: 3,
         desc: 'Full residential staging for Glenmiro, a private residence in North Carolina. Curated furniture selection, styling, and placement across dining, living, kitchen, sunroom, and entrance spaces to elevate the home for market.',
         images: [
           { src: 'images/portfolio/p6-glenmiro/Dining_Room_1.JPG', caption: 'Dining Room' },
@@ -498,6 +501,7 @@
         title: 'Peninsula',
         location: 'North Carolina · 2021',
         scope: 'Staging',
+        coverIndex: 0,
         desc: 'Full residential staging for Peninsula, a private residence in North Carolina. Thoughtful kitchen styling and curation across 12 views to present the home at its highest potential.',
         images: [
           { src: 'images/portfolio/p7-peninsula/Kitchen_Staging_1.jpg', caption: 'Kitchen Staging' },
@@ -616,9 +620,14 @@
 
       if (item && item.src) {
         if (item.isVideo) {
-          wrap.innerHTML = `<video src="${item.src}" controls playsinline style="max-width:100%;max-height:70vh;display:block;margin:0 auto;"></video>`;
+          const base = item.src.replace(/\.(MOV|mov|mp4|MP4)$/, '');
+          wrap.innerHTML = `<video controls playsinline style="max-width:100%;max-height:70vh;display:block;margin:0 auto;">
+            <source src="${base}.MOV" type="video/quicktime">
+            <source src="${base}.mov" type="video/quicktime">
+            <source src="${base}.mp4" type="video/mp4">
+          </video>`;
         } else {
-          wrap.innerHTML = `<img src="${item.src}" alt="${item.caption || p.title + ' photo ' + (currentImg + 1)}">`;
+          wrap.innerHTML = `<img src="${item.src}" alt="${item.caption || p.title + ' photo ' + (currentImg + 1)}" loading="lazy" decoding="async" style="max-width:100%;max-height:70vh;object-fit:contain;display:block;margin:0 auto;">`;
         }
       } else {
         const num = currentImg + 1;
@@ -629,13 +638,13 @@
       }
 
       document.getElementById('albumCounter').textContent = `${currentImg + 1} / ${total}`;
-      // Update set-cover button state
-      const setCoverBtn = document.getElementById('setCoverBtn');
-      if (setCoverBtn) {
-        const isCover = currentImg === (projects[currentProject].coverIndex || 0);
-        setCoverBtn.textContent = isCover ? '★ Cover photo' : '☆ Set as cover';
-        setCoverBtn.style.opacity = isCover ? '1' : '0.6';
+      // Preload next image for faster navigation
+      const nextItem = p.images[currentImg + 1];
+      if (nextItem && nextItem.src && !nextItem.isVideo) {
+        const preloadImg = new Image();
+        preloadImg.src = nextItem.src;
       }
+
       // Show caption below image; fall back to project desc on first image
       const caption = item && item.caption ? item.caption : '';
       document.getElementById('albumDesc').textContent = caption || (currentImg === 0 ? p.desc : '');
@@ -658,26 +667,10 @@
             <span style="font-size:7px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-align:center;line-height:1.2">${item.caption || 'Video'}</span>
           </div>`;
         } else {
-          inner = `<img src="${item.src}" alt="${item.caption || 'thumb ' + (i+1)}">`;
+          inner = `<img src="${item.src}" alt="${item.caption || 'thumb ' + (i+1)}" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;">`;
         }
         return `<div class="album-thumb ${i === 0 ? 'active' : ''}" onclick="goToImg(${i})">${inner}</div>`;
       }).join('');
-    }
-
-    function setCoverPhoto() {
-      projects[currentProject].coverIndex = currentImg;
-      renderProjectGrid();
-      // Update button immediately
-      const setCoverBtn = document.getElementById('setCoverBtn');
-      if (setCoverBtn) {
-        setCoverBtn.textContent = '★ Cover photo';
-        setCoverBtn.style.opacity = '1';
-      }
-      // Update all thumbs to show cover star
-      document.querySelectorAll('.album-thumb').forEach((t, i) => {
-        const star = t.querySelector('.cover-star');
-        if (star) star.style.display = i === currentImg ? 'block' : 'none';
-      });
     }
 
     function goToImg(i) {
