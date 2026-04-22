@@ -59,8 +59,8 @@
         </div>
       </div>
 
-      <!-- Formspree — replace YOUR_FORM_ID at formspree.io -->
-      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <!-- mailto contact form -->
+      <form class="contact-form" onsubmit="sendEmail(event)">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="first-name">First Name</label>
@@ -81,11 +81,11 @@
           <label class="form-label" for="service">I'm interested in</label>
           <select class="form-select" id="service" name="service">
             <option value="">Select a service…</option>
-            <option value="ugc">UGC Content Creation</option>
-            <option value="strategy">Social Media Strategy</option>
-            <option value="interior">Interior Design Portfolio Access</option>
-            <option value="virtual">Virtual Design Waitlist</option>
-            <option value="other">Other</option>
+            <option value="UGC Content Creation">UGC Content Creation</option>
+            <option value="Social Media Strategy">Social Media Strategy</option>
+            <option value="Interior Design Portfolio Access">Interior Design Portfolio Access</option>
+            <option value="Virtual Design Waitlist">Virtual Design Waitlist</option>
+            <option value="Other">Other</option>
           </select>
         </div>
 
@@ -97,6 +97,25 @@
         <p class="form-note">I typically respond within 48 hours.</p>
         <button type="submit" class="btn-primary form-submit">Send Message</button>
       </form>
+
+      <script>
+        function sendEmail(e) {
+          e.preventDefault();
+          const firstName = document.getElementById('first-name').value.trim();
+          const lastName = document.getElementById('last-name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const service = document.getElementById('service').value || 'Not specified';
+          const message = document.getElementById('message').value.trim();
+          const subject = encodeURIComponent('AXSOAL Inquiry — ' + service);
+          const body = encodeURIComponent(
+            'Name: ' + firstName + ' ' + lastName + '\n' +
+            'Email: ' + email + '\n' +
+            'Service: ' + service + '\n\n' +
+            'Message:\n' + message
+          );
+          window.location.href = 'mailto:info@axsoal.com?subject=' + subject + '&body=' + body;
+        }
+      </script>
     </div>
   </section>
 
