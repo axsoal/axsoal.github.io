@@ -75,6 +75,8 @@ body {
 .story-img-placeholder { width: 100%; aspect-ratio: 3/4; background: var(--linen); display: flex; align-items: center; justify-content: center; }
 .story-img-placeholder span { font-size: 11px; letter-spacing: 0.15em; color: var(--white); text-transform: uppercase; opacity: 0.8; }
 .story-img-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.profile-mobile { display: none; }
+.profile-desktop { display: block; }
 .story-img-tag {
   display: block;
   background: var(--wine);
@@ -425,7 +427,9 @@ body {
   .nav-links { display: none; }
   .nav-toggle { display: block; }
   .story-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .story-img-placeholder { aspect-ratio: 4/3; }
+  .story-img-placeholder { aspect-ratio: 1/1; max-height: 380px; overflow: hidden; }
+  .profile-desktop { display: none; }
+  .profile-mobile { display: block; }
   .story-img-tag { right: 0; }
   .services-grid { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: 1fr 1fr; }
@@ -435,15 +439,18 @@ body {
   .ugc-stats { grid-template-columns: 1fr; }
   .ugc-phones-grid { grid-template-columns: repeat(2,1fr); }
   .footer-inner { flex-direction: column; text-align: center; }
+  .footer-links { flex-direction: column; align-items: center; gap: 0.75rem; }
 }
 @media (max-width: 500px) {
   .nav { padding: 0 1.25rem; }
-  .hero, .story, .services, .portfolio-section, .contact-section, .ugc-intro-section, .ugc-phones-section { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .hero, .story, .services, .portfolio-section, .contact-section, .ugc-intro-section { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .ugc-phones-section { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .ugc-featured-section { padding-left: 1.25rem; padding-right: 1.25rem; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .p-card.wide, .p-card.tall, .p-card.half, .p-card.third, .p-card.full { grid-column: span 1; }
-  .ugc-phones-grid { grid-template-columns: repeat(2,1fr); gap: 1.25rem; }
-  .iphone-frame, .iphone-outer { width: 155px; }
-  .iphone-outer { height: 334px; }
+  .ugc-phones-grid { grid-template-columns: repeat(2,1fr); gap: 1rem; padding: 0; }
+  .iphone-frame { width: 100%; }
+  .iphone-outer { width: 100%; height: auto; aspect-ratio: 9/19.5; }
 }
 
 /* ===== UGC ROW LABELS ===== */
@@ -590,6 +597,7 @@ body {
 @media (max-width: 900px) {
   .ugc-featured-inner { grid-template-columns: 1fr; gap: 2rem; }
   .ugc-featured-stats { grid-template-columns: repeat(2, 1fr); }
+  .ugc-featured-phone { max-width: 200px; margin: 0 auto; width: 100%; }
 }
 
 /* ===== UGC FEATURED TIKTOK LINK ===== */
