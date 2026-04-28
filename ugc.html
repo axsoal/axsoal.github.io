@@ -8,6 +8,42 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    @media (max-width: 900px) {
+      .iphone-outer {
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+        border-radius: 20px !important;
+        overflow: hidden !important;
+        background: #1c1c1e !important;
+      }
+      .iphone-outer::before,
+      .iphone-outer::after { display: none !important; }
+      .iphone-screen {
+        border-radius: 20px !important;
+        overflow: hidden !important;
+        aspect-ratio: 9 / 16 !important;
+        height: auto !important;
+        width: 100% !important;
+        position: relative !important;
+      }
+      .video-clip-wrap {
+        position: absolute !important;
+        inset: 0 !important;
+        overflow: hidden !important;
+        border-radius: 20px !important;
+      }
+      .video-clip-wrap video {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 0 !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
