@@ -74,9 +74,7 @@ body {
 .story-image-block { position: relative; }
 .story-img-placeholder { width: 100%; aspect-ratio: 3/4; background: var(--linen); display: block; overflow: hidden; }
 .story-img-placeholder span { font-size: 11px; letter-spacing: 0.15em; color: var(--white); text-transform: uppercase; opacity: 0.8; }
-.story-img-placeholder img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.story-img-placeholder .profile-mobile { display: none; }
-.story-img-placeholder .profile-desktop { display: block; }
+.story-img-placeholder img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 .story-img-tag {
   display: block;
   background: var(--wine);
@@ -331,9 +329,9 @@ body {
 /* UGC PHONES */
 .ugc-intro-section { padding: 4rem 2.5rem 2rem; max-width: var(--max-w); margin: 0 auto; }
 .ugc-phones-section { padding: 2rem 2.5rem 5rem; max-width: var(--max-w); margin: 0 auto; }
-.ugc-phones-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 2.5rem; justify-items: center; }
+.ugc-phones-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap: 2.5rem; justify-items: center; }
 
-.iphone-frame { width: 200px; position: relative; cursor: pointer; }
+.iphone-frame { width: 100%; max-width: 200px; position: relative; cursor: pointer; }
 .iphone-outer {
   width: 200px; height: 432px;
   background: #1c1c1e;
@@ -427,9 +425,8 @@ body {
   .nav-links { display: none; }
   .nav-toggle { display: block; }
   .story-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .story-img-placeholder { aspect-ratio: 1/1; max-height: 380px; overflow: hidden; display: block; }
-  .story-img-placeholder .profile-desktop { display: none; }
-  .story-img-placeholder .profile-mobile { display: block; }
+  .story-img-placeholder { aspect-ratio: 3/4; max-height: 480px; }
+
   .story-img-tag { right: 0; }
   .services-grid { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: 1fr 1fr; }
@@ -440,11 +437,12 @@ body {
   .ugc-phones-grid { grid-template-columns: repeat(2,1fr); }
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-links { flex-direction: column; align-items: center; gap: 0.75rem; }
+  .cta-band { padding: 3rem 1.5rem; }
 }
 @media (max-width: 500px) {
   .nav { padding: 0 1.25rem; }
   .hero, .story, .services, .portfolio-section, .contact-section, .ugc-intro-section { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .ugc-phones-section { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .ugc-phones-section { padding-left: 0.5rem; padding-right: 0.5rem; padding-top: 1rem; padding-bottom: 2rem; }
   .ugc-featured-section { padding-left: 1.25rem; padding-right: 1.25rem; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .p-card.wide, .p-card.tall, .p-card.half, .p-card.third, .p-card.full { grid-column: span 1; }
@@ -505,7 +503,6 @@ body {
 
 /* ===== RESPONSIVE UPDATES ===== */
 @media (max-width: 900px) {
-  .ugc-phones-grid { grid-template-columns: repeat(2,1fr); }
   .strategy-stats-grid { grid-template-columns: repeat(2,1fr); }
   .strategy-cases-grid { grid-template-columns: 1fr; }
 }

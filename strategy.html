@@ -64,12 +64,17 @@
     .included-item-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 300; color: var(--wine-dark); margin-bottom: 0.6rem; }
     .included-item-body { font-size: 12px; color: var(--taupe-light); line-height: 1.9; }
 
+    .kpi-grid--tiktok { grid-template-columns: repeat(5, 1fr); }
     @media (max-width: 900px) {
       .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .kpi-grid--tiktok { grid-template-columns: repeat(2, 1fr); }
+      .kpi-grid--tiktok .kpi-card:last-child { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; width: 100%; }
       .platform-graphs { grid-template-columns: 1fr; }
     }
     @media (max-width: 500px) {
       .kpi-grid { grid-template-columns: 1fr 1fr; }
+      .kpi-grid--tiktok { grid-template-columns: repeat(2, 1fr); }
+      .kpi-grid--tiktok .kpi-card:last-child { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; width: 100%; }
     }
 
     /* Instagram balanced layout */
@@ -156,7 +161,7 @@
       </div>
     </div>
 
-    <div class="kpi-grid" style="grid-template-columns: repeat(5, 1fr);">
+    <div class="kpi-grid kpi-grid--tiktok">
       <div class="kpi-card">
         <span class="kpi-value">936K</span>
         <span class="kpi-label">Video Views</span>
