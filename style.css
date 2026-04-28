@@ -443,11 +443,11 @@ body {
 @media (max-width: 500px) {
   .nav { padding: 0 1.25rem; }
   .hero, .story, .services, .portfolio-section, .contact-section, .ugc-intro-section { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .ugc-phones-section { padding-left: 0.5rem; padding-right: 0.5rem; padding-top: 1rem; padding-bottom: 2rem; }
+  .ugc-phones-section { padding-left: 0.75rem; padding-right: 0.75rem; padding-top: 1rem; padding-bottom: 2rem; max-width: 100%; }
   .ugc-featured-section { padding-left: 1.25rem; padding-right: 1.25rem; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .p-card.wide, .p-card.tall, .p-card.half, .p-card.third, .p-card.full { grid-column: span 1; }
-  .ugc-phones-grid { grid-template-columns: repeat(2,1fr) !important; gap: 0.75rem; padding: 0; }
+  .ugc-phones-grid { grid-template-columns: repeat(2,1fr) !important; gap: 0.5rem; padding: 0; }
   .iphone-frame { width: 100% !important; max-width: 100% !important; }
   .iphone-outer { width: 100% !important; max-width: 100% !important; height: auto !important; aspect-ratio: 9/19.5; overflow: hidden; border-radius: 28px; padding: 10px 7px; }
 }
