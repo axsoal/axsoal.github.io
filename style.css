@@ -329,9 +329,9 @@ body {
 /* UGC PHONES */
 .ugc-intro-section { padding: 4rem 2.5rem 2rem; max-width: var(--max-w); margin: 0 auto; }
 .ugc-phones-section { padding: 2rem 2.5rem 5rem; max-width: var(--max-w); margin: 0 auto; }
-.ugc-phones-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap: 2.5rem; justify-items: center; }
+.ugc-phones-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem; justify-items: center; }
 
-.iphone-frame { width: 100%; max-width: 200px; position: relative; cursor: pointer; }
+.iphone-frame { width: 100%; position: relative; cursor: pointer; display: flex; flex-direction: column; align-items: center; }
 .iphone-outer {
   width: 200px; height: 432px;
   background: #1c1c1e;
@@ -436,6 +436,7 @@ body {
   .ugc-stats { grid-template-columns: 1fr; }
   .ugc-phones-grid { grid-template-columns: repeat(2,1fr); }
   .footer-inner { flex-direction: column; text-align: center; }
+  .footer { padding: 1.5rem 1.5rem; }
   .footer-links { flex-direction: column; align-items: center; gap: 0.75rem; }
   .cta-band { padding: 3rem 1.5rem; }
 }
@@ -448,7 +449,7 @@ body {
   .p-card.wide, .p-card.tall, .p-card.half, .p-card.third, .p-card.full { grid-column: span 1; }
   .ugc-phones-grid { grid-template-columns: repeat(2,1fr) !important; gap: 0.75rem; padding: 0; }
   .iphone-frame { width: 100% !important; max-width: 100% !important; }
-  .iphone-outer { width: 100% !important; max-width: 100% !important; height: auto !important; aspect-ratio: 9/19.5; }
+  .iphone-outer { width: 100% !important; max-width: 100% !important; height: auto !important; aspect-ratio: 9/19.5; overflow: hidden; border-radius: 28px; padding: 10px 7px; }
 }
 
 /* ===== UGC ROW LABELS ===== */
@@ -636,6 +637,7 @@ body {
   margin-top: 12px;
   text-align: center;
   padding: 0 4px;
+  width: 100%;
 }
 .ugc-phone-cat {
   font-size: 9px;
