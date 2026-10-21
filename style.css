@@ -699,3 +699,101 @@ body {
 .play-overlay:hover .play-btn {
   transform: scale(1.08);
 }
+
+/* ---------- Brand carousel (uses the site's existing :root variables) ---------- */
+.brand-carousel {
+  padding: 4.5rem 0;
+  background: var(--linen-light);
+  border-top: 1px solid var(--linen);
+  border-bottom: 1px solid var(--linen);
+  text-align: center;
+  overflow: hidden;
+}
+
+.brand-carousel__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--wine);
+  margin-bottom: 1rem;
+}
+
+.brand-carousel__title {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  color: var(--wine-dark);
+  margin-bottom: 3rem;
+  padding: 0 1.5rem;
+}
+
+.brand-carousel__title em { font-style: italic; color: var(--wine); }
+
+/* Fades the logos out at the left and right edges */
+.brand-carousel__viewport {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+.brand-carousel__track {
+  display: flex;
+  width: max-content;
+  animation: brand-scroll 55s linear infinite;  /* lower = faster */
+}
+
+.brand-carousel__viewport:hover .brand-carousel__track {
+  animation-play-state: paused;
+}
+
+.brand-carousel__list {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  margin: 0;
+  padding: 0 36px;
+  list-style: none;
+}
+
+.brand-carousel__list li {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+}
+
+/* Logos are pre-colored Warm Taupe; --w on each img sets its size */
+.brand-carousel__list img {
+  display: block;
+  width: var(--w, 90px);
+  height: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.brand-carousel__list img:hover { opacity: 1; }
+
+@keyframes brand-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Phones: smaller logos, tighter spacing */
+@media (max-width: 600px) {
+  .brand-carousel { padding: 3.5rem 0; }
+  .brand-carousel__list { gap: 44px; padding: 0 22px; }
+  .brand-carousel__list li { height: 48px; }
+  .brand-carousel__list img { width: calc(var(--w, 90px) * 0.75); }
+  .brand-carousel__track { animation-duration: 40s; }
+}
+
+/* Respect visitors who turn off motion: show a static wrapped grid instead */
+@media (prefers-reduced-motion: reduce) {
+  .brand-carousel__viewport { -webkit-mask-image: none; mask-image: none; }
+  .brand-carousel__track { animation: none; width: auto; justify-content: center; }
+  .brand-carousel__list { flex-wrap: wrap; justify-content: center; row-gap: 32px; }
+  .brand-carousel__list[aria-hidden="true"] { display: none; }
+}
