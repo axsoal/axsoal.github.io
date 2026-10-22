@@ -801,3 +801,12 @@ body {
 /* Homepage services: 2 cards */
 .services-grid--two { grid-template-columns: repeat(2,1fr); }
 @media (max-width: 900px) { .services-grid--two { grid-template-columns: 1fr; } }
+
+/* Featured video: keep the TikTok badge visible and clickable above the play layer */
+.ugc-featured-tiktok-badge {
+  z-index: 11;
+  opacity: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.ugc-featured-tiktok-badge:hover { background: rgba(100, 2, 25, 1); }
