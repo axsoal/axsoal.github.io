@@ -797,3 +797,7 @@ body {
   .brand-carousel__list { flex-wrap: wrap; justify-content: center; row-gap: 32px; }
   .brand-carousel__list[aria-hidden="true"] { display: none; }
 }
+
+/* Homepage services: 2 cards */
+.services-grid--two { grid-template-columns: repeat(2,1fr); }
+@media (max-width: 900px) { .services-grid--two { grid-template-columns: 1fr; } }

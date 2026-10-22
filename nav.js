@@ -5,7 +5,6 @@ mobileMenu.className = 'nav-mobile-menu';
 [
   ['index.html','Home'],
   ['ugc.html','UGC'],
-  ['strategy.html','Strategy'],
   ['interior.html','Interior Design'],
   ['digital-products.html','Digital Products'],
   ['contact.html','Contact']
